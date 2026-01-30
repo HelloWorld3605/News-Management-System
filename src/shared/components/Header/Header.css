@@ -52,7 +52,8 @@ img {
 }
 
 .search-container input:focus,
-.search-container input:active {
+.search-container input:active,
+.search-container input:hover {
   border: none;
   outline: none;
   border-bottom: 2px solid #000;
@@ -90,7 +91,8 @@ img {
 }
 
 .header-link:focus,
-.header-link:active {
+.header-link:active,
+.header-link:hover {
   border-bottom: 2px solid #000;
   outline: none;
 }
@@ -125,7 +127,8 @@ img {
 }
 
 .header-menu-button:focus,
-.header-menu-button:active {
+.header-menu-button:active,
+.header-menu-button:hover {
   border-bottom: 2px solid #000;
   outline: none;
 }
