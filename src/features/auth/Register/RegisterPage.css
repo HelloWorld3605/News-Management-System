@@ -1,0 +1,124 @@
+.register-page {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: transparent;
+}
+
+.register-title {
+  font-family: "Fraunces", serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #000;
+  position: relative;
+}
+
+.register-title:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #fabea1;
+  margin: 0.75rem auto 0;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-size: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #000;
+  outline: none;
+  box-shadow: 0 0 0 1px #000;
+}
+
+.register-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition:
+    transform 0.1s,
+    opacity 0.2s;
+}
+
+.register-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: #484847;
+}
+
+.login-link a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+}
+
+.login-link a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.login-link a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
