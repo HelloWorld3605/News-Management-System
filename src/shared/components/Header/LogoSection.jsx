@@ -1,11 +1,14 @@
-import React from "react";  
+import React from "react";
 import logo from "../../../assets/FU NEWS 2.png";
+import { Link } from "react-router-dom";
 
 const LogoSection = () => {
   return (
     <div className="logo-section">
-      <img src={logo} alt="FU NEWS" />
-    </div>  
+      <Link to="/">
+        <img src={logo} alt="FU NEWS" />
+      </Link>
+    </div>
   );
 };
 

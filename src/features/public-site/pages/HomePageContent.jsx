@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./HomePageContent.css";
+import { Link } from "react-router-dom";
 const HomePageContent = () => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -105,7 +106,7 @@ const HomePageContent = () => {
                 <mark className="mark mark--primary">cướp slot môn học</mark>
               </a>
             </h2>
-            <div className="article-creditation">
+            <div className="article-author-info">
               <p>
                 <strong>By :</strong> Phùng Tuấn Hải, Nguyễn Hữu Tùng, Nguyễn
                 Văn Phú
@@ -119,9 +120,9 @@ const HomePageContent = () => {
               <img src="https://i1-vnexpress.vnecdn.net/2026/01/31/4098266225582035685-1769835468-5407-8176-1769863325.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=bVjs1KSnHyippP3Qj5Jtew" />
             </figure>
             <h2 className="article-title article-title--medium">
-              <a href="#" className="article-link">
+              <Link to="/article-details" className="article-link">
                 Thủ khoa giành 5 giải Olympic Toán, Lý toàn quốc
-              </a>
+              </Link>
             </h2>
             <div className="article-excerpt">
               <p>

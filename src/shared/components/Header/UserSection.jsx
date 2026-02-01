@@ -7,6 +7,9 @@ const UserSection = () => {
         <Link to="/login" className="header-link">
           Đăng nhập
         </Link>
+        <Link to="/register" className="header-link">
+          Đăng ký
+        </Link>
       </nav>
       <button className="header-menu-button">Xem Thêm</button>
     </div>
