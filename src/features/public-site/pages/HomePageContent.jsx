@@ -1,147 +1,239 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./HomePageContent.css";
 const HomePageContent = () => {
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState("0:00");
+  const [duration, setDuration] = useState("0:00");
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openImage = (src) => {
+    setSelectedImage(src);
+  };
+
+  const closeImage = () => {
+    setSelectedImage(null);
+  };
+
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+  };
+
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      const current = audioRef.current.currentTime;
+      const total = audioRef.current.duration;
+      setProgress((current / total) * 100);
+      setCurrentTime(formatTime(current));
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(formatTime(audioRef.current.duration));
+    }
+  };
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <div className="homepagecontent responsive-wrapper">
-      <div class="page-title">
+      <div className="page-title">
         <h1>Tin tức mới nhất</h1>
       </div>
-      <div class="magazine-layout">
-        <div class="magazine-column">
-          <article class="article">
-            <h2 class="article-title article-title--large">
-              <a href="#" class="article-link">
-                The First Signs of
-                <mark class="mark mark--primary">Alcoholic Liver</mark> Damage
-                Are Not in the Liver
+      <div className="magazine-layout">
+        <div className="magazine-column">
+          <article className="article">
+            <figure className="article-img">
+              <img src="https://i1-vnexpress.vnecdn.net/2026/01/18/img-2291-jpg-1768731017-176873-9503-8193-1768731762.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=9--QF77v1WnD6AEqDGifSg" />
+            </figure>
+            <h2 className="article-title article-title--large">
+              <a href="#" className="article-link">
+                Hành trình trở thành{" "}
+                <mark className="mark mark--primary">
+                  bác sĩ nội trú xuất sắc
+                </mark>{" "}
+                của thủ khoa Y Hà Nội
               </a>
             </h2>
-            <div class="article-excerpt">
+            <div className="article-excerpt">
               <p>
-                The combination of my father's death and my personal back ground
-                lit a fire in me to know more
+                Học trường huyện, tới giữa lớp 12 mới ôn khối B, Mạnh Hùng không
+                chỉ đỗ Đại học Y Hà Nội, mà sau đó còn trở thành thủ khoa đầu
+                ra, bác sĩ nội trú xuất sắc.
               </p>
-              <p>He was admitted to the hospital on June 24, 2016.</p>
             </div>
 
-            <div class="article-author">
-              <div class="article-author-img">
-                <img src="https://assets.codepen.io/285131/author-3.png" />
+            <div className="article-author">
+              <div className="article-author-img">
+                <img
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  onClick={() =>
+                    openImage(
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                    )
+                  }
+                />
               </div>
-              <div class="article-author-info">
+              <div className="article-author-info">
                 <dl>
-                  <dt>David Sherof</dt>
-                  <dd>Reporter</dd>
+                  <dt>Phùng Tuấn Hải</dt>
+                  <dd>Tác giả</dd>
                 </dl>
               </div>
             </div>
           </article>
-          <article class="article">
-            <h2 class="article-title article-title--medium">
-              <a href="#" class="article-link">
-                The Founder's Guide to Actually Understanding Users Nowadays
+          <article className="article">
+            {/* <figure className="article-img">
+              <img src="https://i1-vnexpress.vnecdn.net/2026/01/28/d2776809-0bc1-43ec-a15c-0915b3-1913-9489-1769566173.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VT4vRagiZDwkb927P9l_3g" />
+            </figure> */}
+            <h2 className="article-title article-title--medium">
+              <a href="#" className="article-link">
+                Tranh cãi sinh viên dùng công cụ{" "}
+                <mark className="mark mark--primary">cướp slot môn học</mark>
               </a>
             </h2>
-            <div class="article-creditation">
+            <div className="article-creditation">
               <p>
-                By Johnathan O'Connell, Andrew Van Dam, Aaron Gregg and Alyssa
-                Fowers
+                <strong>By :</strong> Phùng Tuấn Hải, Nguyễn Hữu Tùng, Nguyễn
+                Văn Phú
               </p>
             </div>
           </article>
         </div>
-        <div class="magazine-column">
-          <article class="article">
-            <figure class="article-img">
-              <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
+        <div className="magazine-column">
+          <article className="article">
+            <figure className="article-img">
+              <img src="https://i1-vnexpress.vnecdn.net/2026/01/31/4098266225582035685-1769835468-5407-8176-1769863325.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=bVjs1KSnHyippP3Qj5Jtew" />
             </figure>
-            <h2 class="article-title article-title--medium">
-              <a href="#" class="article-link">
-                How 7 Lines of Code Turned Into a $36 Billion Empire
+            <h2 className="article-title article-title--medium">
+              <a href="#" className="article-link">
+                Thủ khoa giành 5 giải Olympic Toán, Lý toàn quốc
               </a>
             </h2>
-            <div class="article-excerpt">
+            <div className="article-excerpt">
               <p>
-                Yeah, it's safe to say these guys have a great sense of humor,
-                which isn't really suprising for us considering their seemingly
-                absurd solution to online payments. Instead of chasing 1000-hour
-                programming contracts to build clunky payments solutions for
-                each individual client, the Collison...
+                Đoàn Minh Lượng từng giành 5 giải Olympic toàn quốc môn Toán và
+                Lý, có bài báo trên tạp chí Q1, trước khi tốt nghiệp thủ khoa
+                Đại học Phenikaa.
               </p>
             </div>
-            <div class="article-author">
-              <div class="article-author-img">
-                <img src="https://assets.codepen.io/285131/author-2.png" />
+            <div className="article-author">
+              <div className="article-author-img">
+                <img
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  onClick={() =>
+                    openImage(
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                    )
+                  }
+                />
               </div>
-              <div class="article-author-info">
+              <div className="article-author-info">
                 <dl>
-                  <dt>James Robert</dt>
-                  <dd>Editor</dd>
+                  <dt>Phùng Tuấn Hải</dt>
+                  <dd>Tác giả</dd>
                 </dl>
               </div>
             </div>
           </article>
         </div>
-        <div class="magazine-column">
-          <article class="article">
-            <figure class="article-img">
-              <img src="https://images.unsplash.com/photo-1512521743077-a42eeaaa963c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" />
+        <div className="magazine-column">
+          <article className="article">
+            <figure className="article-img">
+              <img src="https://i1-vnexpress.vnecdn.net/2026/01/28/kimdohyeong-1769587281-1769587-9368-3384-1769587339.jpg?w=300&h=180&q=100&dpr=2&fit=crop&s=GykQEGDLu3N64I9iXCnyrQ" />
             </figure>
-            <h2 class="article-title article-title--small">
-              <a href="#" class="article-link">
-                To Become <mark class="mark mark--secondary">Happier</mark>, Ask
-                Yourself These Two Questions Every Night
+            <h2 className="article-title article-title--small">
+              <a href="#" className="article-link">
+                Trường Quốc tế Singapore có{" "}
+                <mark className="mark mark--secondary">Thủ khoa thế giới</mark>{" "}
+                kỳ thi Cambridge 2025
               </a>
             </h2>
-            <div class="article-creditation">
-              <p>By Jonathan O'Connell</p>
+            <div className="article-creditation">
+              <p>
+                <strong>By :</strong> Phùng Tuấn Hải
+              </p>
             </div>
           </article>
-          <article class="article">
-            <figure class="article-img">
-              <img src="https://images.unsplash.com/photo-1569234817121-a2552baf4fd4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
+          <article className="article">
+            <figure className="article-img">
+              <img src="https://i1-vnexpress.vnecdn.net/2026/01/26/z7463767962270-a99ad5f203e3485-6596-8810-1769398293.jpg?w=300&h=180&q=100&dpr=2&fit=crop&s=qGUFflnvy5BsU70_tj5Rdg" />
             </figure>
-            <h2 class="article-title article-title--small">
-              <a href="#" class="article-link">
-                10 Things I Stole From People Smarter Than Me
+            <h2 className="article-title article-title--small">
+              <a href="#" className="article-link">
+                Chàng trai cõng mẹ khi nhận bằng tốt nghiệp xuất sắc
               </a>
             </h2>
-            <div class="article-creditation">
-              <p>By Jonathan O'Connell</p>
+            <div className="article-creditation">
+              <strong>By :</strong> Phùng Tuấn Hải
             </div>
           </article>
         </div>
-        <div class="magazine-column">
-          <article class="article">
-            <h2 class="article-title article-title--medium">
-              <a href="#" class="article-link">
-                Traveller Visiting Ice Cave With Amazing Eye-Catching Scenes
+        <div className="magazine-column">
+          <article className="article">
+            {/* <figure className="article-img">
+              <iframe
+                width="100%"
+                height="280"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </figure> */}
+            <h2 className="article-title article-title--medium">
+              <a href="#" className="article-link">
+                <mark className="mark mark--secondary">
+                  Ăn mày mà đòi xôi gấc
+                </mark>{" "}
+                trong tiếng Anh nói thế nào?
               </a>
             </h2>
-            <div class="article-excerpt">
+            <div className="article-excerpt">
               <p>
-                Slack has become indispensible for many businesses operation
-                remotely during the pandemic. Here's what the acquisition could
-                mean for users...
+                "Ăn mày mà đòi xôi gấc" là cách nói để chỉ những người ở vị thế
+                yếu nhưng lại đưa ra đòi hỏi cao. Bạn có biết cách nói tương tự
+                trong tiếng Anh?.
               </p>
             </div>
-            <div class="article-author">
-              <div class="article-author-img">
-                <img src="https://assets.codepen.io/285131/author-2.png" />
+            <div className="article-author">
+              <div className="article-author-img">
+                <img
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  onClick={() =>
+                    openImage(
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                    )
+                  }
+                />
               </div>
-              <div class="article-author-info">
+              <div className="article-author-info">
                 <dl>
-                  <dt>James Robert</dt>
-                  <dd>Editor</dd>
+                  <dt>Phùng Tuấn Hải</dt>
+                  <dd>Tác giả</dd>
                 </dl>
               </div>
             </div>
           </article>
-          <article class="article">
-            <small class="article-category">
+          <article className="article">
+            <small className="article-category">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="28"
                 height="22"
                 viewBox="0 0 28 22"
@@ -151,7 +243,7 @@ const HomePageContent = () => {
                     <rect width="28" height="22" />
                   </clipPath>
                 </defs>
-                <g id="headphones" clip-path="url(#clip-headphones)">
+                <g id="headphones" clipPath="url(#clip-headphones)">
                   <g
                     id="Group_2"
                     data-name="Group 2"
@@ -204,47 +296,88 @@ const HomePageContent = () => {
                   </g>
                 </g>
               </svg>
-              <span>Post Reports / Podcast</span>
+              <span>Âm thanh</span>
             </small>
-            <h2 class="article-title article-title--medium">
-              <a href="#" class="article-link">
-                Things to Do After 6 P.M Will Enrich
-                <mark class="mark mark--tertiary">Your Life</mark>
+            <h2 className="article-title article-title--medium">
+              <a href="#" className="article-link">
+                Nghe bài hát này vào lúc học bài{" "}
+                <mark className="mark mark--tertiary"> trong vòng 20 ngày</mark>{" "}
+                thì sẽ đến Tết
               </a>
             </h2>
-            <div class="article-podcast-player">
-              <button class="podcast-play-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="192"
-                  height="192"
-                  fill="#000000"
-                  viewBox="0 0 256 256"
-                >
-                  <rect width="256" height="256" fill="none"></rect>
-                  <path d="M232.3125,114.34375,88.34375,26.35937A15.99781,15.99781,0,0,0,64,40.00781V215.99219a16.00521,16.00521,0,0,0,24.34375,13.64843L232.3125,141.65625a16.00727,16.00727,0,0,0,0-27.3125Z"></path>
-                </svg>
+            <div className="article-podcast-player">
+              <audio
+                ref={audioRef}
+                src="https://res.cloudinary.com/dz9q8zkeh/video/upload/v1757038916/ds2hycnyglplh0f8265x.mp3"
+                onEnded={() => setIsPlaying(false)}
+                onTimeUpdate={handleTimeUpdate}
+                onLoadedMetadata={handleLoadedMetadata}
+              />
+              <button className="podcast-play-button" onClick={togglePlay}>
+                {isPlaying ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="192"
+                    height="192"
+                    fill="#000000"
+                    viewBox="0 0 256 256"
+                  >
+                    <rect width="256" height="256" fill="none"></rect>
+                    <path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"></path>
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="192"
+                    height="192"
+                    fill="#000000"
+                    viewBox="0 0 256 256"
+                  >
+                    <rect width="256" height="256" fill="none"></rect>
+                    <path d="M232.3125,114.34375,88.34375,26.35937A15.99781,15.99781,0,0,0,64,40.00781V215.99219a16.00521,16.00521,0,0,0,24.34375,13.64843L232.3125,141.65625a16.00727,16.00727,0,0,0,0-27.3125Z"></path>
+                  </svg>
+                )}
               </button>
-              <div class="podcast-progression"></div>
-              <span class="podcast-time">23:45</span>
+              <div
+                className="podcast-progression"
+                style={{
+                  backgroundImage: `linear-gradient(to right, #f99970 ${progress}%, #d9d4cd ${progress}%, #d9d4cd 100%)`,
+                }}
+              ></div>
+              <span className="podcast-time">{currentTime}</span>
             </div>
-            <div class="article-podcast-info">
-              Apple Podcasts, Google Podcasts, Stitcher
-            </div>
-            <div class="article-author">
-              <div class="article-author-img">
-                <img src="https://assets.codepen.io/285131/author-3.png" />
+            <div className="article-podcast-info">{/* Postcast info */}</div>
+            <div className="article-author">
+              <div className="article-author-img">
+                <img
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  onClick={() =>
+                    openImage(
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                    )
+                  }
+                />
               </div>
-              <div class="article-author-info">
+              <div className="article-author-info">
                 <dl>
-                  <dt>David Sherof</dt>
-                  <dd>Reporter</dd>
+                  <dt>Phùng Tuấn Hải</dt>
+                  <dd>Tác giả</dd>
                 </dl>
               </div>
             </div>
           </article>
         </div>
       </div>
+      {selectedImage && (
+        <div className="image-modal-overlay" onClick={closeImage}>
+          <img
+            src={selectedImage}
+            alt="Expanded Author"
+            className="image-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 };
