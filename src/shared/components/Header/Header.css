@@ -1,3 +1,13 @@
+.header-fixed-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f8f3eb;
+  padding-top: 20px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -7,21 +17,26 @@ img {
 .header {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 4rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.header-fixed-wrapper.is-scrolled .header {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ----------------HEADER LEFT---------------- */
 .header-left {
   img {
-    max-height: 90px;
+    max-height: 60px;
     width: auto;
   }
   position: relative;
-  top: 10px;
   user-select: none;
 }
 
@@ -48,7 +63,7 @@ img {
   font-size: 16px;
   font-weight: bold;
   position: relative;
-  left: 40px;
+  left: 68px;
 }
 
 .search-container input:focus,
@@ -79,7 +94,10 @@ img {
   margin-right: 0.75rem;
   display: none;
   font-weight: 500;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
   &--button {
     background-color: #000;
     color: #fff;

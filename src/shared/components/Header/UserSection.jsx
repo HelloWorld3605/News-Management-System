@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const UserSection = () => {
-  
   return (
     <div className="user-section">
       <nav className="header-nav">
