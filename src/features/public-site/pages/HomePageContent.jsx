@@ -149,7 +149,43 @@ const HomePageContent = () => {
               </div>
             </div>
           </article>
+          <article className="article">
+            <figure className="article-img">
+              <img src="https://i1-vnexpress.vnecdn.net/2026/01/08/image004-1767885332-1767885459-8152-1767885516.png?w=680&h=0&q=100&dpr=1&fit=crop&s=V9lJfAcr5yUi5znGbh5QhQ" />
+            </figure>
+            <h2 className="article-title article-title--medium">
+              <a href="#" className="article-link">
+                Thêm chương trình đào tạo nhân sự AI chất lượng cao
+              </a>
+            </h2>
+            <div className="article-excerpt">
+              <p>
+                Chương trình "Học viện AI tại Việt Nam" do Đại học Bách khoa,
+                NIC và HLE triển khai, cấp chứng chỉ được công nhận tại các tập
+                đoàn công nghệ lớn như Nvidia, Viettel, FPT…
+              </p>
+            </div>
+            <div className="article-author">
+              <div className="article-author-img">
+                <img
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  onClick={() =>
+                    openImage(
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                    )
+                  }
+                />
+              </div>
+              <div className="article-author-info">
+                <dl>
+                  <dt>Phùng Tuấn Hải</dt>
+                  <dd>Tác giả</dd>
+                </dl>
+              </div>
+            </div>
+          </article>
         </div>
+
         <div className="magazine-column">
           <article className="article">
             <figure className="article-img">
@@ -296,7 +332,7 @@ const HomePageContent = () => {
                   </g>
                 </g>
               </svg>
-              <span>Âm thanh</span>
+              <span>Postcast</span>
             </small>
             <h2 className="article-title article-title--medium">
               <a href="#" className="article-link">
