@@ -8,6 +8,8 @@ body {
   color: #484847;
   box-sizing: border-box;
   padding-top: calc(8rem + 20px);
+  margin-left: auto;
+  margin-right: auto;
 }
 .responsive-wrapper {
   width: 95%;

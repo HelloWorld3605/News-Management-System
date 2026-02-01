@@ -23,6 +23,9 @@ const ArticleDetails = () => {
     <div className="article-details responsive-wrapper">
       <div className="article-container">
         <main className="article-main">
+          <span className="article-time">
+            Chủ nhật, 1/2/2026, 06:00 (GMT+7)
+          </span>
           <h1 className="article-heading">
             Thủ khoa giành 5 giải Olympic Toán, Lý toàn quốc
           </h1>
@@ -189,17 +192,61 @@ const ArticleDetails = () => {
           <h3 className="sidebar-title">Xem nhiều</h3>
           <ul className="sidebar-list">
             <li>
-              <a href="#">Hành trình trở thành bác sĩ nội trú xuất sắc</a>
+              <a href="#" className="sidebar-item">
+                <div className="sidebar-item-image">
+                  <img
+                    src="https://i1-vnexpress.vnecdn.net/2026/01/18/img-2291-jpg-1768731017-176873-9503-8193-1768731762.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=9--QF77v1WnD6AEqDGifSg"
+                    alt="Bác sĩ nội trú"
+                  />
+                </div>
+                <div className="sidebar-item-title">
+                  Hành trình trở thành bác sĩ nội trú xuất sắc
+                </div>
+              </a>
             </li>
             <li>
-              <a href="#">Tranh cãi sinh viên dùng công cụ cướp slot môn học</a>
+              <a href="#" className="sidebar-item">
+                <div className="sidebar-item-image">
+                  {/* Reuse image or find another relevant one. I'll use a placeholder/similar one for now or try to match if I had more context, but generic fits. Using a different one from homepage content if possible or reusing. */}
+                  <img
+                    src="https://i1-vnexpress.vnecdn.net/2026/01/28/d2776809-0bc1-43ec-a15c-0915b3-1913-9489-1769566173.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VT4vRagiZDwkb927P9l_3g"
+                    alt="Sinh viên"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://i1-vnexpress.vnecdn.net/2026/01/18/img-2291-jpg-1768731017-176873-9503-8193-1768731762.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=9--QF77v1WnD6AEqDGifSg";
+                    }}
+                  />
+                </div>
+                <div className="sidebar-item-title">
+                  Tranh cãi sinh viên dùng công cụ cướp slot môn học
+                </div>
+              </a>
             </li>
             <li>
-              <a href="#">Trường Quốc tế Singapore có Thủ khoa thế giới</a>
+              <a href="#" className="sidebar-item">
+                <div className="sidebar-item-image">
+                  <img
+                    src="https://i1-vnexpress.vnecdn.net/2026/01/28/kimdohyeong-1769587281-1769587-9368-3384-1769587339.jpg?w=300&h=180&q=100&dpr=2&fit=crop&s=GykQEGDLu3N64I9iXCnyrQ"
+                    alt="Singapore"
+                  />
+                </div>
+                <div className="sidebar-item-title">
+                  Trường Quốc tế Singapore có Thủ khoa thế giới
+                </div>
+              </a>
             </li>
             <li>
-              <a href="#">
-                Thêm chương trình đào tạo nhân sự AI chất lượng cao
+              <a href="#" className="sidebar-item">
+                <div className="sidebar-item-image">
+                  <img
+                    src="https://i1-vnexpress.vnecdn.net/2026/01/08/image004-1767885332-1767885459-8152-1767885516.png?w=680&h=0&q=100&dpr=1&fit=crop&s=V9lJfAcr5yUi5znGbh5QhQ"
+                    alt="AI"
+                  />
+                </div>
+                <div className="sidebar-item-title">
+                  Thêm chương trình đào tạo nhân sự AI chất lượng cao
+                </div>
               </a>
             </li>
           </ul>

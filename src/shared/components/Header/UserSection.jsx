@@ -11,6 +11,9 @@ const UserSection = () => {
           Đăng ký
         </Link>
       </nav>
+      <button className="header-notification-button" aria-label="Notifications">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
       <button className="header-menu-button">Xem Thêm</button>
     </div>
   );
