@@ -1,7 +1,5 @@
 .header-fixed-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
   background-color: #f8f3eb;
@@ -26,9 +24,9 @@ img {
   transition: border-bottom-color 0.3s ease;
 }
 
-.header-fixed-wrapper.is-scrolled .header {
+/* .header-fixed-wrapper.is-scrolled .header {
   border-bottom-color: rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* ----------------HEADER LEFT---------------- */
 .header-left {

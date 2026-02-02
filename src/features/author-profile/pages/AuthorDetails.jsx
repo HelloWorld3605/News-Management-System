@@ -3,6 +3,7 @@ import "./AuthorDetails.css";
 
 const AuthorDetails = () => {
   return (
+    <>
     <div className="author-details responsive-wrapper">
       <div className="author-container">
         <main className="author-main">
@@ -21,7 +22,7 @@ const AuthorDetails = () => {
                 Chuyên viên công nghệ thông tin
               </p>
             </div>
-            <div className="author-details-header-actions">
+            <div className="author-details-header-actions"> 
               <div className="author-details-header-info-count-art">
                 <strong>15</strong> bài viết
               </div>
@@ -213,6 +214,7 @@ const AuthorDetails = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 
