@@ -1,7 +1,3 @@
-.author-details {
-  padding-bottom: 4rem;
-}
-
 .author-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -19,7 +15,7 @@
   }
 }
 
-/* Header styles inside Main */
+/*-------------------- author-details-header ------------------ */
 .author-details-header {
   display: flex;
   align-items: center; /* Align items vertically */
@@ -97,12 +93,96 @@
   box-shadow: 0 4px 8px rgba(159, 34, 78, 0.2);
 }
 
-/* Sidebar Styles (Replicated/Scoped from ArticleDetails) */
+/*-------------------- author-details-content ------------------ */
+.author-details-content {
+  margin-top: 2rem;
+  font-size: 20px;
+  line-height: 36px;
+  display: block;
+}
+
+/*-------------------- list-article ------------------ */
+
+.list-article-title {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  color: #000;
+}
+
+.list-article-title:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fabea1;
+  margin-top: 5px;
+}
+
+.list-article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-article-item {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: rgb(247, 247, 247);
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.list-article-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  border-color: #ddd;
+}
+
+.list-article-item-title {
+  font-family: "Fraunces", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+  color: #000;
+}
+
+.list-article-item-title a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.list-article-item-title a:hover {
+  color: #9f224e;
+  text-decoration: underline;
+}
+
+.list-article-item-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ------------------------- Sidebar Styles -------------------- */
 .author-sidebar {
   border-left: 1px solid #eee;
   padding-left: 1.5rem;
   position: sticky;
-  top: 6rem;
+  top: 3.5rem;
   height: fit-content;
 }
 
@@ -165,7 +245,7 @@
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
-  display: block; /* Ensure anchor behaves like block for image */
+  display: block;
 }
 
 .sidebar-item-image.author-avatar {
@@ -200,7 +280,7 @@
   font-weight: 700;
   color: #333;
   display: block;
-  text-decoration: none; /* explicitly remove underline for anchor */
+  text-decoration: none;
 }
 
 .sidebar-author-role {
@@ -215,8 +295,8 @@
   text-decoration: underline;
 }
 
-.sidebar-item:hover .sidebar-item-title .sidebar-author-name {
-}
+/* .sidebar-item:hover .sidebar-item-title .sidebar-author-name {
+} */
 
 .sidebar-item:hover .sidebar-item-title {
   text-decoration: none;
