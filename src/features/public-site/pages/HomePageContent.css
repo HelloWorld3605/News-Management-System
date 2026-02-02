@@ -1,5 +1,5 @@
 .homepagecontent {
-  margin-bottom: 10rem;
+  padding-bottom: 4rem;
 }
 
 .page-title {
@@ -201,6 +201,15 @@
     max-height: 1rem;
     fill: #fff;
   }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.podcast-play-button:hover {
+  cursor: pointer;
+  background-color: #333;
+  transition: background-color 0.2s;
 }
 
 .podcast-progression {

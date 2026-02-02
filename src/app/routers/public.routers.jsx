@@ -4,6 +4,7 @@ import LoginPage from "../../features/auth/Login/LoginPage";
 import RegisterPage from "../../features/auth/Register/RegisterPage";
 import HomePageContent from "../../features/public-site/pages/HomePageContent";
 import ArticleDetails from "../../features/article/pages/ArticleDetails";
+import AuthorDetails from "../../features/author-profile/pages/AuthorDetails";
 
 const publicRoutes = [
   {
@@ -23,6 +24,11 @@ const publicRoutes = [
     path: "/article-details",
     element: <PublicLayout />,
     children: [{ index: true, element: <ArticleDetails /> }],
+  },
+  {
+    path: "/author-details",
+    element: <PublicLayout />,
+    children: [{ index: true, element: <AuthorDetails /> }],
   },
 ];
 

@@ -1,0 +1,223 @@
+.author-details {
+  padding-bottom: 4rem;
+}
+
+.author-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .author-container {
+    grid-template-columns: 5fr 2fr;
+    gap: 3rem;
+  }
+}
+
+/* Header styles inside Main */
+.author-details-header {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 1.5rem; /* Add gap between elements */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.author-details-header-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #323232; /* Match placeholder bg if image loads slowly */
+  background-color: #323232; /* Match placeholder bg if image loads slowly */
+}
+
+.author-details-header-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.author-details-header-info-name {
+  font-family: "Fraunces", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+.author-details-header-info {
+  margin-bottom: 1rem;
+}
+
+.author-details-header-info-role {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.author-details-header-actions {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.author-details-header-info-count-art {
+  font-size: 1rem;
+  color: #333;
+}
+
+.author-details-header-info-follow {
+  background-color: #9f224e;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: fit-content;
+}
+
+.author-details-header-info-follow:hover {
+  background-color: #821b40;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(159, 34, 78, 0.2);
+}
+
+/* Sidebar Styles (Replicated/Scoped from ArticleDetails) */
+.author-sidebar {
+  border-left: 1px solid #eee;
+  padding-left: 1.5rem;
+  position: sticky;
+  top: 6rem;
+  height: fit-content;
+}
+
+@media (max-width: 991px) {
+  .author-sidebar {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+  }
+}
+
+/* Sidebar Elements */
+.sidebar-title {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fabea1;
+    margin-top: 5px;
+  }
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list li {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-list li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-item {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.sidebar-item-image {
+  width: 80px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  display: block; /* Ensure anchor behaves like block for image */
+}
+
+.sidebar-item-image.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.sidebar-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.sidebar-item:hover .sidebar-item-image img {
+  transform: scale(1.1);
+}
+
+.sidebar-item-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: color 0.2s;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-author-name {
+  font-weight: 700;
+  color: #333;
+  display: block;
+  text-decoration: none; /* explicitly remove underline for anchor */
+}
+
+.sidebar-author-role {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.sidebar-author-name:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.sidebar-item:hover .sidebar-item-title .sidebar-author-name {
+}
+
+.sidebar-item:hover .sidebar-item-title {
+  text-decoration: none;
+}

@@ -80,10 +80,10 @@ const HomePageContent = () => {
             <div className="article-author">
               <div className="article-author-img">
                 <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
                   onClick={() =>
                     openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
                     )
                   }
                 />
@@ -134,17 +134,21 @@ const HomePageContent = () => {
             <div className="article-author">
               <div className="article-author-img">
                 <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
                   onClick={() =>
                     openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
                     )
                   }
                 />
               </div>
               <div className="article-author-info">
                 <dl>
-                  <dt>Phùng Tuấn Hải</dt>
+                  <dt>
+                    <Link className="article-link" to="/author-details">
+                      Phùng Tuấn Hải
+                    </Link>
+                  </dt>
                   <dd>Tác giả</dd>
                 </dl>
               </div>
@@ -169,10 +173,10 @@ const HomePageContent = () => {
             <div className="article-author">
               <div className="article-author-img">
                 <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
                   onClick={() =>
                     openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
                     )
                   }
                 />
@@ -250,10 +254,10 @@ const HomePageContent = () => {
             <div className="article-author">
               <div className="article-author-img">
                 <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
                   onClick={() =>
                     openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
                     )
                   }
                 />
@@ -345,7 +349,7 @@ const HomePageContent = () => {
             <div className="article-podcast-player">
               <audio
                 ref={audioRef}
-                src="https://res.cloudinary.com/dz9q8zkeh/video/upload/v1757038916/ds2hycnyglplh0f8265x.mp3"
+                src="https://res.cloudinary.com/dz9q8zkeh/video/upload/v1769991641/lofi-chill-372954_uxkmzz.mp3"
                 onEnded={() => setIsPlaying(false)}
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
@@ -387,10 +391,10 @@ const HomePageContent = () => {
             <div className="article-author">
               <div className="article-author-img">
                 <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png"
+                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
                   onClick={() =>
                     openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769940136/avatar_t%C3%A1c_gi%E1%BA%A3_ojd3kd.png",
+                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
                     )
                   }
                 />
