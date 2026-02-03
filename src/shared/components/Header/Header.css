@@ -22,7 +22,7 @@ img {
   align-items: center;
   border-bottom: 1px solid transparent;
   transition: border-bottom-color 0.3s ease;
-  position: relative; /* For absolute positioning of middle section */
+  position: relative;
 }
 
 /* ----------------HEADER LEFT---------------- */
@@ -33,7 +33,7 @@ img {
   }
   position: relative;
   user-select: none;
-  z-index: 2; /* Ensure above middle if overlap */
+  z-index: 2;
 }
 
 /* ----------------HEADER MIDDLE---------------- */
@@ -242,6 +242,8 @@ img {
 .user-dropdown-menu {
   position: absolute;
   top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 10px;
   background-color: #fff;
   min-width: 220px;
@@ -250,18 +252,18 @@ img {
   border-radius: 0;
   padding: 0;
   z-index: 1001;
-  transform-origin: top right;
-  animation: fadeIn 0.2s ease-out;
+  transform-origin: top center;
+  animation: fadeInCentered 0.2s ease-out;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInCentered {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateX(-50%) translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 }
 
@@ -269,7 +271,6 @@ img {
   display: block;
   width: 84%;
   padding: 12px 20px;
-
   text-decoration: none;
   color: #000;
   font-size: 0.95rem;
@@ -293,10 +294,9 @@ img {
 }
 
 .dropdown-divider {
-  display: none; /* Hide divider as we use borders on items now */
+  display: none;
 }
 
-/* Specific style for logout if needed, but the unified black hover is usually cleaner */
 .dropdown-logout-btn {
   width: 100%;
   color: #d32f2f;
@@ -305,4 +305,110 @@ img {
 .dropdown-logout-btn:hover {
   background-color: #d32f2f;
   color: #fff;
+}
+
+/* ----------------Notification Styles---------------- */
+.user-section-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.notification-dropdown {
+  width: 320px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  box-shadow: 4px 4px 0px #000;
+  border: 2px solid #000;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  margin-top: 10px;
+  z-index: 1001;
+  animation: fadeInCentered 0.2s ease-out;
+}
+
+.notification-header {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  background: #f9f9f9;
+}
+
+.notification-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.notification-tab:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.notification-tab.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+  background-color: #fff;
+}
+
+.notification-content {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.notification-empty {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.notification-item:hover {
+  background-color: #f9f9f9;
+}
+
+.notification-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.notification-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.notification-item .time {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.7rem;
+  color: #999;
 }
