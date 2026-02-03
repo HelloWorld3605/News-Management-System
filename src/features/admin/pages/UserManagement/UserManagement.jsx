@@ -313,7 +313,7 @@ const UserManagement = () => {
                     margin: 0,
                   }}
                 >
-                  Có thể tạo, chỉnh sửa và xuất bản bài viết
+                  Có thể tạo, chỉnh sửa, xuất bản bài viết, có thể quản lý bình luận
                 </p>
               </div>
               <div className="um-role-card">
@@ -340,10 +340,10 @@ const UserManagement = () => {
                     margin: 0,
                   }}
                 >
-                  Chỉ có thể đọc bài viết
+                  Có thể đọc bài viết và bình luận vào bài viết
                 </p>
               </div>
-              {/* <div className="um-role-card">
+              <div className="um-role-card">
                 <div
                   style={{
                     display: "flex",
@@ -357,7 +357,7 @@ const UserManagement = () => {
                     style={{ color: "#4b5563" }}
                   />
                   <span style={{ fontWeight: 600, color: "#0f172a" }}>
-                    Sớm ra mắt
+                    Guest
                   </span>
                 </div>
                 <p
@@ -367,9 +367,9 @@ const UserManagement = () => {
                     margin: 0,
                   }}
                 >
-                  Sớm ra mắt
+                  Chỉ có thể đọc bài viết
                 </p>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
