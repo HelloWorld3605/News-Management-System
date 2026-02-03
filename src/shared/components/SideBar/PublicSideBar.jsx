@@ -1,29 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import categoryService from "../../services/categoryService.js";
 import "./PublicSideBar.css";
 
-const sidebarItems = [
-  { label: "Tuyển sinh", path: "/tuyen-sinh" },
-  { label: "Tin tức – Thông báo", path: "/tin-tuc" },
-  { label: "Sự kiện", path: "/su-kien" },
-  { label: "Đào tạo – Học thuật", path: "/dao-tao" },
-  { label: "Đời sống sinh viên", path: "/doi-song-sinh-vien" },
-  { label: "Công nghệ – Đổi mới sáng tạo", path: "/cong-nghe" },
-  { label: "Hướng nghiệp – Việc làm", path: "/viec-lam" },
-  { label: "Thể thao", path: "/the-thao" },
-];
-
 const PublicSideBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    categoryService
+      .getActiveCategories()
+      .then((res) => setCategories(res.data))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <aside className="public-sidebar responsive-wrapper">
       <div className="public-sidebar-header">
         <h3>Thể loại</h3>
       </div>
       <ul className="public-sidebar-list">
-        {sidebarItems.map((item, index) => (
-          <li className="public-sidebar-item" key={index}>
-            <Link to={item.path} className="public-sidebar-item-title">
-              {item.label}
+        {categories.map((cat) => (
+          <li className="public-sidebar-item" key={cat.CategoryID}>
+            <Link to={cat.Path} className="public-sidebar-item-title">
+              {cat.CategoryName}
             </Link>
           </li>
         ))}

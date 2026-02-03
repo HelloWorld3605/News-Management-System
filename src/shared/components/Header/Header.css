@@ -22,11 +22,8 @@ img {
   align-items: center;
   border-bottom: 1px solid transparent;
   transition: border-bottom-color 0.3s ease;
+  position: relative; /* For absolute positioning of middle section */
 }
-
-/* .header-fixed-wrapper.is-scrolled .header {
-  border-bottom-color: rgba(0, 0, 0, 0.1);
-} */
 
 /* ----------------HEADER LEFT---------------- */
 .header-left {
@@ -36,19 +33,25 @@ img {
   }
   position: relative;
   user-select: none;
+  z-index: 2; /* Ensure above middle if overlap */
 }
 
 /* ----------------HEADER MIDDLE---------------- */
 
 .header-middle {
   display: none;
-  flex: 1;
   justify-content: center;
   user-select: none;
-  margin: 0 1rem;
+  margin: 0;
 
   @media (min-width: 768px) {
     display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
   }
 }
 
@@ -58,6 +61,7 @@ img {
   min-width: 500px;
   display: flex;
   justify-content: center;
+  pointer-events: all; 
 }
 
 .search-container input {
@@ -70,7 +74,7 @@ img {
   font-size: 16px;
   font-weight: bold;
   position: relative;
-  left: 135px;
+  transition: all 0.3s ease;
 }
 
 .search-container input:focus,
@@ -193,7 +197,111 @@ img {
   opacity: 0.7;
 }
 
+/* ----------------USER SECTION & DROPDOWN---------------- */
 .user-section {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.header-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 0.5rem;
+  text-align: right;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.2s;
+}
+
+.header-user-info:hover,
+.header-user-info:focus,
+.header-user-info:active,
+.header-user-info.active {
+  border-bottom: 2px solid #000;
+}
+
+.user-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #000;
+  line-height: 1.2;
+}
+
+.user-role {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Dropdown Menu */
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  margin-top: 10px;
+  background-color: #fff;
+  min-width: 220px;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  border-radius: 0;
+  padding: 0;
+  z-index: 1001;
+  transform-origin: top right;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: block;
+  width: 84%;
+  padding: 12px 20px;
+
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #000;
+  color: #fff;
+}
+
+.dropdown-divider {
+  display: none; /* Hide divider as we use borders on items now */
+}
+
+/* Specific style for logout if needed, but the unified black hover is usually cleaner */
+.dropdown-logout-btn {
+  width: 100%;
+  color: #d32f2f;
+}
+
+.dropdown-logout-btn:hover {
+  background-color: #d32f2f;
+  color: #fff;
 }

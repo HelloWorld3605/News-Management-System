@@ -1,0 +1,155 @@
+{
+  "systemAccounts": [
+    {
+      "AccountID": 1,
+      "AccountName": "Admin",
+      "AccountEmail": "admin@funews.edu.vn",
+      "AccountPassword": "Admin",
+      "AccountRole": "ADMIN",
+      "IsActive": 1
+    },
+    {
+      "AccountID": 2,
+      "AccountName": "Staff01",
+      "AccountEmail": "staff01@funews.edu.vn",
+      "AccountPassword": "123456",
+      "AccountRole": "STAFF",
+      "IsActive": 1
+    },
+    {
+      "AccountID": 3,
+      "AccountName": "Reader01",
+      "AccountEmail": "reader01@funews.edu.vn",
+      "AccountPassword": "123456",
+      "AccountRole": "READER",
+      "IsActive": 1
+    }
+  ],
+
+  "categories": [
+    {
+      "CategoryID": 1,
+      "CategoryName": "Tuyển sinh",
+      "CategoryDescription": "Thông tin tuyển sinh các trường đại học",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/tuyen-sinh"
+    },
+    {
+      "CategoryID": 2,
+      "CategoryName": "Tin tức – Thông báo",
+      "CategoryDescription": "Tin tức và thông báo từ các trường",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/tin-tuc"
+    },
+    {
+      "CategoryID": 3,
+      "CategoryName": "Sự kiện",
+      "CategoryDescription": "Sự kiện nổi bật trong giáo dục",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/su-kien"
+    },
+    {
+      "CategoryID": 4,
+      "CategoryName": "Đào tạo – Học thuật",
+      "CategoryDescription": "Hoạt động đào tạo và nghiên cứu",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/dao-tao"
+    },
+    {
+      "CategoryID": 5,
+      "CategoryName": "Đời sống sinh viên",
+      "CategoryDescription": "Hoạt động và đời sống sinh viên",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/doi-song-sinh-vien"
+    },
+    {
+      "CategoryID": 6,
+      "CategoryName": "Công nghệ – Đổi mới sáng tạo",
+      "CategoryDescription": "Công nghệ mới và sáng tạo trong giáo dục",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/cong-nghe"
+    },
+    {
+      "CategoryID": 7,
+      "CategoryName": "Hướng nghiệp – Việc làm",
+      "CategoryDescription": "Thông tin nghề nghiệp và việc làm",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/viec-lam"
+    },
+    {
+      "CategoryID": 8,
+      "CategoryName": "Thể thao",
+      "CategoryDescription": "Hoạt động thể thao sinh viên",
+      "ParentCategoryID": null,
+      "IsActive": 1,
+      "Path": "/the-thao"
+    }
+  ],
+
+  "tags": [
+    {
+      "TagID": 1,
+      "TagName": "FU News",
+      "Note": "Tin chính thức"
+    },
+    {
+      "TagID": 2,
+      "TagName": "Sinh viên",
+      "Note": "Tin dành cho sinh viên"
+    },
+    {
+      "TagID": 3,
+      "TagName": "Công nghệ",
+      "Note": "Tin công nghệ"
+    }
+  ],
+
+  "newsArticles": [
+    {
+      "NewsArticleID": 1,
+      "NewsTitle": "Thông báo tuyển sinh năm 2026",
+      "Headline": "Nhiều thay đổi quan trọng trong tuyển sinh",
+      "CreatedDate": "2026-02-01",
+      "NewsContent": "Các trường đại học bắt đầu công bố phương án tuyển sinh...",
+      "NewsSource": "FU News",
+      "CategoryID": 1,
+      "NewsStatus": 1,
+      "CreatedByID": 2,
+      "UpdatedByID": 2,
+      "ModifiedDate": "2026-02-01"
+    },
+    {
+      "NewsArticleID": 2,
+      "NewsTitle": "Ứng dụng AI trong giáo dục đại học",
+      "Headline": "Công nghệ đang thay đổi phương pháp giảng dạy",
+      "CreatedDate": "2026-02-02",
+      "NewsContent": "AI đang được ứng dụng mạnh mẽ trong đào tạo...",
+      "NewsSource": "FU News",
+      "CategoryID": 6,
+      "NewsStatus": 1,
+      "CreatedByID": 2,
+      "UpdatedByID": 2,
+      "ModifiedDate": "2026-02-02"
+    }
+  ],
+
+  "newsTags": [
+    {
+      "id": 1,
+      "NewsArticleID": 1,
+      "TagID": 1
+    },
+    {
+      "id": 2,
+      "NewsArticleID": 2,
+      "TagID": 3
+    }
+  ]
+}
