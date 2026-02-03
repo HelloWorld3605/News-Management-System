@@ -1,7 +1,6 @@
 import React from "react";
 import "./DashBoardManagement.css";
 
-// SVG Icons
 const FileTextIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +13,7 @@ const FileTextIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="text-primary"
-    style={{ color: "#0f172a" }}
+    style={{ color: "rgb(139, 111, 71)" }}
   >
     <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
     <polyline points="14 2 14 8 20 8" />
@@ -36,7 +35,7 @@ const FolderIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="text-primary"
-    style={{ color: "#0f172a" }}
+    style={{ color: "rgb(139, 111, 71)" }}
   >
     <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
   </svg>
@@ -54,7 +53,7 @@ const UsersIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="text-primary"
-    style={{ color: "#0f172a" }}
+    style={{ color: "rgb(139, 111, 71)" }}
   >
     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
     <circle cx="9" cy="7" r="4" />
@@ -75,7 +74,7 @@ const EyeIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="text-primary"
-    style={{ color: "#0f172a" }}
+    style={{ color: "rgb(139, 111, 71)" }}
   >
     <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
     <circle cx="12" cy="12" r="3" />
@@ -88,50 +87,52 @@ const DashBoardManagement = () => {
       <div className="dashboard-content">
         {/* Page Header */}
         <div className="db-page-header">
-          <h1 className="db-title">Dashboard</h1>
-          <p className="db-subtitle">Welcome to FU News Management System</p>
+          <h1 className="db-title">Bảng điều khiển</h1>
+          <p className="db-subtitle">
+            Chào mừng đến với Hệ thống Quản lý Tin tức FU
+          </p>
         </div>
 
         {/* Statistics Grid */}
         <div className="db-stats-grid">
           <div className="db-card">
             <div className="db-card-header db-stat-header">
-              <h3 className="db-card-title">Total News</h3>
+              <h3 className="db-card-title">Tổng số tin tức</h3>
               <FileTextIcon />
             </div>
             <div className="db-card-content" style={{ paddingTop: 0 }}>
               <div className="db-stat-value">124</div>
-              <p className="db-stat-desc">Articles published</p>
+              <p className="db-stat-desc">Bài viết đã xuất bản</p>
             </div>
           </div>
           <div className="db-card">
             <div className="db-card-header db-stat-header">
-              <h3 className="db-card-title">Categories</h3>
+              <h3 className="db-card-title">Danh mục</h3>
               <FolderIcon />
             </div>
             <div className="db-card-content" style={{ paddingTop: 0 }}>
               <div className="db-stat-value">8</div>
-              <p className="db-stat-desc">Active categories</p>
+              <p className="db-stat-desc">Danh mục đang hoạt động</p>
             </div>
           </div>
           <div className="db-card">
             <div className="db-card-header db-stat-header">
-              <h3 className="db-card-title">Total Users</h3>
+              <h3 className="db-card-title">Tổng số người dùng</h3>
               <UsersIcon />
             </div>
             <div className="db-card-content" style={{ paddingTop: 0 }}>
               <div className="db-stat-value">45</div>
-              <p className="db-stat-desc">Admin & contributors</p>
+              <p className="db-stat-desc">Quản trị viên & cộng tác viên</p>
             </div>
           </div>
           <div className="db-card">
             <div className="db-card-header db-stat-header">
-              <h3 className="db-card-title">Total Views</h3>
+              <h3 className="db-card-title">Tổng lượt xem</h3>
               <EyeIcon />
             </div>
             <div className="db-card-content" style={{ paddingTop: 0 }}>
               <div className="db-stat-value">12.5K</div>
-              <p className="db-stat-desc">This month</p>
+              <p className="db-stat-desc">Trong tháng này</p>
             </div>
           </div>
         </div>
@@ -145,23 +146,23 @@ const DashBoardManagement = () => {
                 className="db-card-title"
                 style={{ fontSize: "1.125rem", fontWeight: 600 }}
               >
-                Recent News
+                Tin tức gần đây
               </h3>
-              <p className="db-card-description">Latest articles published</p>
+              <p className="db-card-description">Bài viết mới nhất</p>
             </div>
             <div className="db-card-content">
               {[1, 2, 3, 4, 5].map((item) => (
                 <div key={item} className="db-news-item">
                   <div className="db-news-thumb" />
                   <div className="db-news-content">
-                    <h4 className="db-news-title">News Title {item}</h4>
+                    <h4 className="db-news-title">Tiêu đề tin tức {item}</h4>
                     <p className="db-news-desc">
-                      This is a brief description of the news article that might
-                      be a bit longer to test clamping.
+                      Đây là mô tả ngắn gọn về bài viết tin tức có thể dài hơn
+                      một chút để thử nghiệm tính năng cắt bớt.
                     </p>
                     <div className="db-news-meta">
-                      <span>Category</span>
-                      <span>2 days ago</span>
+                      <span>Danh mục</span>
+                      <span>2 ngày trước</span>
                     </div>
                   </div>
                 </div>
@@ -176,19 +177,25 @@ const DashBoardManagement = () => {
                 className="db-card-title"
                 style={{ fontSize: "1.125rem", fontWeight: 600 }}
               >
-                Quick Actions
+                Tác vụ nhanh
               </h3>
             </div>
             <div className="db-card-content">
               <div className="db-quick-actions">
                 <button className="db-btn-action db-btn-primary">
-                  + New Article
+                  + Bài viết mới
                 </button>
                 <button className="db-btn-action db-btn-secondary">
-                  + New Category
+                  + Thêm người dùng
                 </button>
-                <button className="db-btn-action db-btn-secondary">
-                  + Add User
+                <button
+                  className="db-btn-action db-btn-secondary"
+                  style={{
+                    backgroundColor: "rgb(232, 223, 213)",
+                    color: "rgb(45, 37, 32)",
+                  }}
+                >
+                  + Danh mục mới
                 </button>
               </div>
 
@@ -201,18 +208,20 @@ const DashBoardManagement = () => {
                     marginBottom: "0.75rem",
                   }}
                 >
-                  Statistics
+                  Thống kê
                 </p>
                 <div className="db-stats-row">
-                  <span style={{ color: "#64748b" }}>Published</span>
+                  <span style={{ color: "rgb(107, 93, 81)" }}>Đã xuất bản</span>
                   <span style={{ fontWeight: 600, color: "#0f172a" }}>98</span>
                 </div>
                 <div className="db-stats-row">
-                  <span style={{ color: "#64748b" }}>Draft</span>
+                  <span style={{ color: "rgb(107, 93, 81)" }}>Bản nháp</span>
                   <span style={{ fontWeight: 600, color: "#0f172a" }}>26</span>
                 </div>
                 <div className="db-stats-row">
-                  <span style={{ color: "#64748b" }}>Pending</span>
+                  <span style={{ color: "rgb(107, 93, 81)" }}>
+                    Đang chờ duyệt
+                  </span>
                   <span style={{ fontWeight: 600, color: "#0f172a" }}>5</span>
                 </div>
               </div>
@@ -227,11 +236,9 @@ const DashBoardManagement = () => {
               className="db-card-title"
               style={{ fontSize: "1.125rem", fontWeight: 600 }}
             >
-              Recent Activity
+              Hoạt động gần đây
             </h3>
-            <p className="db-card-description">
-              Latest updates from the system
-            </p>
+            <p className="db-card-description">Cập nhật mới nhất từ hệ thống</p>
           </div>
           <div className="db-card-content">
             {[1, 2, 3, 4, 5, 6].map((item) => (
@@ -246,15 +253,19 @@ const DashBoardManagement = () => {
                       margin: 0,
                     }}
                   >
-                    User action {item}
+                    Hành động của người dùng {item}
                   </p>
                   <p
-                    style={{ fontSize: "0.75rem", color: "#64748b", margin: 0 }}
+                    style={{
+                      fontSize: "0.75rem",
+                      color: "rgb(107, 93, 81)",
+                      margin: 0,
+                    }}
                   >
-                    Description of what happened
+                    Mô tả về những gì đã xảy ra
                   </p>
                 </div>
-                <span className="db-activity-time">{item}h ago</span>
+                <span className="db-activity-time">{item} giờ trước</span>
               </div>
             ))}
           </div>

@@ -35,7 +35,7 @@
 }
 
 .um-subtitle {
-  color: #64748b;
+  color: rgb(107, 93, 81);
   margin-top: 0.5rem;
   font-size: 1rem;
 }
@@ -93,7 +93,7 @@
 
 .um-card-description {
   font-size: 0.875rem;
-  color: #64748b;
+  color: rgb(107, 93, 81);
   margin-top: 0.25rem;
 }
 
@@ -124,12 +124,12 @@
 .um-stat-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: rgb(139, 111, 71);
 }
 
 .um-stat-label {
   font-size: 0.75rem;
-  color: #64748b;
+  color: rgb(107, 93, 81);
   margin-top: 0.25rem;
 }
 
@@ -159,7 +159,7 @@
 }
 
 .um-table tr:hover {
-  background-color: #f8fafc;
+  background-color: #d1c4b4;
 }
 
 .um-user-cell {
@@ -260,15 +260,16 @@
   color: #0f172a;
 }
 .um-action-btn.edit:hover {
-  background-color: #f1f5f9;
+  background-color: #c9a961;
+  color: white;
 }
 
 .um-action-btn.delete {
-  color: #64748b;
+  color: rgb(107, 93, 81);
 }
 .um-action-btn.delete:hover {
-  background-color: #fee2e2;
-  color: #dc2626;
+  background-color: #e74c3c;
+  color: white;
 }
 
 /* Roles Grid */
