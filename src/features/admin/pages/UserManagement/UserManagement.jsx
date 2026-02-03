@@ -11,6 +11,7 @@ import {
   AdminIcon,
 } from "../../../../assets/AdminIcons";
 import { UserModal, DeleteConfirmModal } from "../../components/UserModals";
+import Pagination from "../../../../shared/components/Pagination/Pagination";
 import "./UserManagement.css";
 
 const RoleBadge = ({ role }) => {
@@ -37,11 +38,15 @@ const UserManagement = () => {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
   const fetchUsers = async () => {
     try {
       const response = await userService.getAll();
       const allUsers = response.data;
-      // Only show users that are not soft-deleted
+  
       setUsers(allUsers.filter((u) => u.isDeleted !== true));
     } catch (error) {
       console.error("Failed to fetch users", error);
@@ -63,7 +68,7 @@ const UserManagement = () => {
         ...formData,
         AccountID: newAccountID,
         isDeleted: false,
-        id: newAccountID.toString(), // Ensure id is a string for json-server
+        id: newAccountID.toString(), 
       };
 
       await userService.create(userData);
@@ -77,7 +82,6 @@ const UserManagement = () => {
   const handleUpdateUser = async (formData) => {
     try {
       if (selectedUser) {
-        // Use .id (string) for json-server routing
         await userService.update(selectedUser.id, formData);
         fetchUsers();
         setIsEditOpen(false);
@@ -91,8 +95,6 @@ const UserManagement = () => {
   const handleDeleteUser = async () => {
     try {
       if (selectedUser) {
-        // Soft delete: Update isDeleted to true
-        // Use .id for identification
         await userService.update(selectedUser.id, {
           ...selectedUser,
           isDeleted: true,
@@ -114,6 +116,15 @@ const UserManagement = () => {
   const openDeleteModal = (user) => {
     setSelectedUser(user);
     setIsDeleteOpen(true);
+  };
+
+  const totalPages = Math.ceil(users.length / itemsPerPage);
+  const indexOfLastUser = currentPage * itemsPerPage;
+  const indexOfFirstUser = indexOfLastUser - itemsPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -277,7 +288,7 @@ const UserManagement = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {users.map((user) => (
+                  {currentUsers.map((user) => (
                     <tr key={user.AccountID}>
                       <td>
                         <div className="um-user-cell">
@@ -327,6 +338,11 @@ const UserManagement = () => {
                 </tbody>
               </table>
             </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
 

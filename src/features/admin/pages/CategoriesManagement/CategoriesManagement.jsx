@@ -5,6 +5,7 @@ import {
   CategoryModal,
   CategoryDeleteModal,
 } from "../../components/CategoryModals";
+import Pagination from "../../../../shared/components/Pagination/Pagination";
 import "./CategoriesManagement.css";
 
 const StatusBadge = ({ isActive }) => {
@@ -25,10 +26,13 @@ const CategoriesManagement = () => {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
   const fetchCategories = async () => {
     try {
       const response = await categoryService.getAll();
-      // Filter out soft-deleted categories
       setCategories(response.data.filter((cat) => cat.isDeleted !== true));
     } catch (error) {
       console.error("Failed to fetch categories", error);
@@ -102,6 +106,16 @@ const CategoriesManagement = () => {
   const openDeleteModal = (category) => {
     setSelectedCategory(category);
     setIsDeleteOpen(true);
+  };
+
+  // Calculate pagination
+  const totalPages = Math.ceil(categories.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentCategories = categories.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -190,7 +204,7 @@ const CategoriesManagement = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {categories.map((category) => (
+                  {currentCategories.map((category) => (
                     <tr key={category.id}>
                       <td>
                         <div className="cm-user-cell">
@@ -231,6 +245,11 @@ const CategoriesManagement = () => {
                 </tbody>
               </table>
             </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
       </div>
