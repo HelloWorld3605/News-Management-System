@@ -1,0 +1,259 @@
+.dashboard-container {
+  padding: 1.5rem;
+  font-family: "Inter", sans-serif;
+  color: #0d0c22;
+  background-color: #f5f3f0;
+  min-height: calc(100vh - 80px);
+}
+
+.dashboard-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Page Header */
+.db-page-header {
+  margin-bottom: 2rem;
+}
+
+.db-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.db-subtitle {
+  color: #64748b;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Cards */
+.db-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(224, 213, 199);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.db-card:hover {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.db-card-header {
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+.db-card-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0;
+}
+
+.db-card-description {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.db-card-content {
+  padding: 1.5rem;
+}
+
+/* Stats Grid */
+.db-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .db-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .db-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.db-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0d0c22;
+  margin-top: 0.5rem;
+}
+
+.db-stat-desc {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.db-stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Main Grid */
+.db-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .db-main-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Recent News Items */
+.db-news-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgb(224, 213, 199);
+}
+
+.db-news-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.db-news-thumb {
+  width: 4rem;
+  height: 4rem;
+  background-color: #f1f5f9;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.db-news-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.db-news-title {
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.db-news-desc {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0.25rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.db-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Quick Actions */
+.db-quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.db-btn-action {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  font-size: 0.875rem;
+  transition: opacity 0.2s;
+}
+
+.db-btn-primary {
+  background-color: #0f172a;
+  color: white;
+}
+.db-btn-secondary {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+.db-btn-muted {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+.db-btn-action:hover {
+  opacity: 0.9;
+}
+
+.db-stats-compact {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(224, 213, 199);
+}
+
+.db-stats-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Activity Feed */
+.db-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgb(224, 213, 199);
+}
+
+.db-activity-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.db-activity-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.db-activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.db-activity-time {
+  font-size: 0.75rem;
+  color: #64748b;
+  white-space: nowrap;
+}

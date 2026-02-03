@@ -1,0 +1,175 @@
+/* Inherit base header styles */
+.admin-header {
+  height: 80px;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgb(224, 213, 199);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.admin-header-left {
+  flex: 1;
+}
+
+.admin-page-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-home-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 0;
+  transition: all 0.2s ease-in-out;
+  font-family: "Inter", sans-serif;
+  border-bottom: 2px solid transparent;
+}
+
+.admin-home-link:hover {
+  background-color: transparent;
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.admin-home-text {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .admin-home-text {
+    display: none;
+  }
+}
+
+/* User Section (Adapted from Header.css) */
+.admin-user-group {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.admin-user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.2s;
+}
+
+.admin-user-info:hover,
+.admin-user-info.active {
+  border-bottom: 2px solid #000;
+  background-color: transparent;
+}
+
+.admin-user-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #000;
+  line-height: 1.2;
+}
+
+.admin-user-role {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.admin-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background-color: #fff;
+  min-width: 220px;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  border-radius: 0;
+  padding: 0;
+  z-index: 1001;
+  transform-origin: top center;
+  animation: fadeInAdmin 0.2s ease-out;
+}
+
+.admin-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: #000;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.admin-dropdown-item:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.admin-dropdown-logout-btn {
+  color: #d32f2f;
+}
+
+.admin-dropdown-logout-btn:hover {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+@keyframes fadeInAdmin {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: "Inter", sans-serif;
+}
