@@ -16,7 +16,7 @@ const PublicSideBar = () => {
   return (
     <aside className="public-sidebar responsive-wrapper">
       <div className="public-sidebar-header">
-        <h3>Thể loại</h3>
+        <h3>Danh mục</h3>
       </div>
       <ul className="public-sidebar-list">
         {categories.map((cat) => (

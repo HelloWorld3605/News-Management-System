@@ -1,82 +1,118 @@
 {
   "systemAccounts": [
     {
+      "id": "1",
       "AccountID": 1,
       "AccountName": "Admin",
       "AccountEmail": "admin@funews.edu.vn",
       "AccountPassword": "Admin",
       "AccountRole": "ADMIN",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "2",
       "AccountID": 2,
       "AccountName": "Staff01",
       "AccountEmail": "staff01@funews.edu.vn",
       "AccountPassword": "123456",
       "AccountRole": "STAFF",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "3",
       "AccountID": 3,
       "AccountName": "Phùng Tuấn Hải",
       "AccountEmail": "reader01@funews.edu.vn",
       "AccountPassword": "123456",
       "AccountRole": "READER",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
+    },
+    {
+      "AccountName": "Phùng Hải",
+      "AccountEmail": "tuanhai362005t@gmail.com",
+      "AccountPassword": "hai362005",
+      "AccountRole": "STAFF",
+      "IsActive": 1,
+      "id": "4"
     }
   ],
-
   "categories": [
     {
+      "id": "1",
       "CategoryID": 1,
       "CategoryName": "Tuyển sinh",
       "Slug": "tuyen-sinh",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "2",
       "CategoryID": 2,
       "CategoryName": "Tin tức – Thông báo",
       "Slug": "tin-tuc",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "3",
       "CategoryID": 3,
       "CategoryName": "Sự kiện",
       "Slug": "su-kien",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "4",
       "CategoryID": 4,
       "CategoryName": "Đào tạo – Học thuật",
       "Slug": "dao-tao",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "5",
       "CategoryID": 5,
       "CategoryName": "Đời sống sinh viên",
       "Slug": "doi-song-sinh-vien",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "6",
       "CategoryID": 6,
       "CategoryName": "Công nghệ – Đổi mới sáng tạo",
       "Slug": "cong-nghe",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "7",
       "CategoryID": 7,
       "CategoryName": "Hướng nghiệp – Việc làm",
       "Slug": "viec-lam",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
     },
     {
+      "id": "8",
       "CategoryID": 8,
       "CategoryName": "Thể thao",
       "Slug": "the-thao",
-      "IsActive": 1
+      "IsActive": 1,
+      "isDeleted": false
+    },
+    {
+      "id": "9",
+      "CategoryName": "ý tưởng start up",
+      "Slug": "y-tuong-start-up",
+      "IsActive": 1,
+      "CategoryID": 9,
+      "isDeleted": false
     }
   ],
-
   "tags": [
     {
       "TagID": 1,
@@ -91,7 +127,6 @@
       "TagName": "Công nghệ"
     }
   ],
-
   "newsArticles": [
     {
       "NewsArticleID": 1,
@@ -190,7 +225,6 @@
       "ViewCount": 8032
     }
   ],
-
   "articleContents": [
     {
       "id": 1,
@@ -228,7 +262,6 @@
       "MediaID": 1
     }
   ],
-
   "media": [
     {
       "MediaID": 1,
@@ -288,7 +321,6 @@
       "Caption": "Lofi Chill"
     }
   ],
-
   "newsTags": [
     {
       "id": 1,
@@ -301,7 +333,6 @@
       "TagID": 3
     }
   ],
-
   "comments": [
     {
       "CommentID": 1,

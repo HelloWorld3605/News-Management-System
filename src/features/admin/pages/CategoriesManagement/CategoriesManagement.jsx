@@ -1,121 +1,108 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import categoryService from "../../../../shared/services/categoryService";
+import { PlusIcon, EditIcon, TrashIcon } from "../../../../assets/AdminIcons";
+import {
+  CategoryModal,
+  CategoryDeleteModal,
+} from "../../components/CategoryModals";
 import "./CategoriesManagement.css";
 
-// SVG Icons
-const PlusIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    style={{ color: "rgb(139, 111, 71)" }}
-  >
-    <path d="M5 12h14" />
-    <path d="M12 5v14" />
-  </svg>
-);
-
-const EditIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
-  </svg>
-);
-
-const TrashIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M3 6h18" />
-    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-    <line x1="10" x2="10" y1="11" y2="17" />
-    <line x1="14" x2="14" y1="11" y2="17" />
-  </svg>
-);
-
-const categoriesData = [
-  {
-    CategoryID: 1,
-    CategoryName: "Tuyển sinh",
-    Slug: "tuyen-sinh",
-    IsActive: 1,
-  },
-  {
-    CategoryID: 2,
-    CategoryName: "Tin tức – Thông báo",
-    Slug: "tin-tuc",
-    IsActive: 1,
-  },
-  {
-    CategoryID: 3,
-    CategoryName: "Sự kiện",
-    Slug: "su-kien",
-    IsActive: 1,
-  },
-  {
-    CategoryID: 4,
-    CategoryName: "Đào tạo – Học thuật",
-    Slug: "dao-tao",
-    IsActive: 1,
-  },
-  {
-    CategoryID: 5,
-    CategoryName: "Đời sống sinh viên",
-    Slug: "doi-song-sinh-vien",
-    IsActive: 1,
-  },
-  {
-    CategoryID: 6,
-    CategoryName: "Công nghệ – Đổi mới sáng tạo",
-    Slug: "cong-nghe",
-    IsActive: 1,
-  },
-  {
-    CategoryID: 7,
-    CategoryName: "Hướng nghiệp – Việc làm",
-    Slug: "viec-lam",
-    IsActive: 1,
-  },
-  {
-    CategoryID: 8,
-    CategoryName: "Thể thao",
-    Slug: "the-thao",
-    IsActive: 1,
-  },
-];
-
 const StatusBadge = ({ isActive }) => {
-  const badgeClass = isActive
-    ? "cm-badge cm-status-active"
-    : "cm-badge cm-status-inactive";
-  return <span className={badgeClass}>{isActive ? "Active" : "Inactive"}</span>;
+  // Assuming IsActive is 1 for active and 0 for inactive
+  const badgeClass =
+    isActive === 1
+      ? "cm-badge cm-status-active"
+      : "cm-badge cm-status-inactive";
+  return (
+    <span className={badgeClass}>{isActive === 1 ? "Active" : "Hidden"}</span>
+  );
 };
 
 const CategoriesManagement = () => {
-  const [categories, setCategories] = useState(categoriesData);
+  const [categories, setCategories] = useState([]);
+  const [isAddOpen, setIsAddOpen] = useState(false);
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const fetchCategories = async () => {
+    try {
+      const response = await categoryService.getAll();
+      // Filter out soft-deleted categories
+      setCategories(response.data.filter((cat) => cat.isDeleted !== true));
+    } catch (error) {
+      console.error("Failed to fetch categories", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const handleCreateCategory = async (formData) => {
+    try {
+      const newCategoryID =
+        categories.length > 0
+          ? Math.max(...categories.map((c) => c.CategoryID || 0)) + 1
+          : 1;
+
+      const payload = {
+        ...formData,
+        CategoryID: newCategoryID,
+        isDeleted: false,
+        id: newCategoryID.toString(),
+      };
+
+      await categoryService.create(payload);
+      fetchCategories();
+      setIsAddOpen(false);
+    } catch (error) {
+      console.error("Failed to create category", error);
+    }
+  };
+
+  const handleUpdateCategory = async (formData) => {
+    try {
+      if (selectedCategory) {
+        await categoryService.update(selectedCategory.id, {
+          ...selectedCategory,
+          ...formData,
+        });
+        fetchCategories();
+        setIsEditOpen(false);
+        setSelectedCategory(null);
+      }
+    } catch (error) {
+      console.error("Failed to update category", error);
+    }
+  };
+
+  const handleDeleteCategory = async () => {
+    try {
+      if (selectedCategory) {
+        // Soft delete
+        await categoryService.update(selectedCategory.id, {
+          ...selectedCategory,
+          isDeleted: true,
+        });
+        fetchCategories();
+        setIsDeleteOpen(false);
+        setSelectedCategory(null);
+      }
+    } catch (error) {
+      console.error("Failed to soft delete category", error);
+    }
+  };
+
+  const openEditModal = (category) => {
+    setSelectedCategory(category);
+    setIsEditOpen(true);
+  };
+
+  const openDeleteModal = (category) => {
+    setSelectedCategory(category);
+    setIsDeleteOpen(true);
+  };
 
   return (
     <div className="categories-management-container">
@@ -128,7 +115,7 @@ const CategoriesManagement = () => {
               Quản lý các danh mục bài viết trong hệ thống
             </p>
           </div>
-          <button className="cm-btn-add">
+          <button className="cm-btn-add" onClick={() => setIsAddOpen(true)}>
             <span style={{ marginRight: "8px", display: "flex" }}></span>+ Thêm
             Danh Mục
           </button>
@@ -155,7 +142,7 @@ const CategoriesManagement = () => {
             </div>
             <div className="cm-card-content">
               <div className="cm-stat-value">
-                {categories.filter((c) => c.IsActive).length}
+                {categories.filter((c) => c.IsActive === 1).length}
               </div>
               <p className="cm-stat-label">Đang hiển thị</p>
             </div>
@@ -166,7 +153,7 @@ const CategoriesManagement = () => {
             </div>
             <div className="cm-card-content">
               <div className="cm-stat-value">
-                {categories.filter((c) => !c.IsActive).length}
+                {categories.filter((c) => c.IsActive !== 1).length}
               </div>
               <p className="cm-stat-label">Đang ẩn</p>
             </div>
@@ -204,7 +191,7 @@ const CategoriesManagement = () => {
                 </thead>
                 <tbody>
                   {categories.map((category) => (
-                    <tr key={category.CategoryID}>
+                    <tr key={category.id}>
                       <td>
                         <div className="cm-user-cell">
                           <span className="cm-user-name">
@@ -225,10 +212,16 @@ const CategoriesManagement = () => {
                       </td>
                       <td>
                         <div className="cm-actions">
-                          <button className="cm-action-btn edit">
+                          <button
+                            className="cm-action-btn edit"
+                            onClick={() => openEditModal(category)}
+                          >
                             <EditIcon />
                           </button>
-                          <button className="cm-action-btn delete">
+                          <button
+                            className="cm-action-btn delete"
+                            onClick={() => openDeleteModal(category)}
+                          >
                             <TrashIcon />
                           </button>
                         </div>
@@ -241,6 +234,34 @@ const CategoriesManagement = () => {
           </div>
         </div>
       </div>
+
+      <CategoryModal
+        isOpen={isAddOpen}
+        onClose={() => setIsAddOpen(false)}
+        onSubmit={handleCreateCategory}
+        title="Thêm danh mục mới"
+      />
+
+      <CategoryModal
+        isOpen={isEditOpen}
+        onClose={() => {
+          setIsEditOpen(false);
+          setSelectedCategory(null);
+        }}
+        onSubmit={handleUpdateCategory}
+        category={selectedCategory}
+        title="Chỉnh sửa danh mục"
+      />
+
+      <CategoryDeleteModal
+        isOpen={isDeleteOpen}
+        onClose={() => {
+          setIsDeleteOpen(false);
+          setSelectedCategory(null);
+        }}
+        onConfirm={handleDeleteCategory}
+        categoryName={selectedCategory?.CategoryName}
+      />
     </div>
   );
 };

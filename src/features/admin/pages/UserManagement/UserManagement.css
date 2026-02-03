@@ -106,7 +106,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+
 }
 
 @media (min-width: 768px) {
@@ -213,15 +213,15 @@
 
 .um-badge-admin {
   background-color: #fee2e2;
-  color: #991b1b;
+  color: #e7000b;
 }
-.um-badge-editor {
+.um-badge-staff {
   background-color: #dbeafe;
-  color: #1e40af;
+  color: #2563eb;
 }
-.um-badge-writer {
+.um-badge-reader {
   background-color: #f3e8ff;
-  color: #6b21a8;
+  color: #9333ea;
 }
 .um-badge-default {
   background-color: #f1f5f9;

@@ -1,8 +1,8 @@
-import axiosClient from "./axiosClient.js";
+import axiosClient from "./axiosClient";
 
-const resource = "/categories";
+const resource = "/systemAccounts";
 
-const categoryService = {
+const userService = {
   getAll: () => {
     return axiosClient.get(resource);
   },
@@ -18,11 +18,9 @@ const categoryService = {
   delete: (id) => {
     return axiosClient.delete(`${resource}/${id}`);
   },
-  getActiveCategories: () => {
-    return axiosClient.get(resource, {
-      params: { IsActive: 1 },
-    });
+  findByEmail: (email) => {
+    return axiosClient.get(`${resource}?AccountEmail=${email}`);
   },
 };
 
-export default categoryService;
+export default userService;
