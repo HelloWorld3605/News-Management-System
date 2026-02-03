@@ -21,7 +21,7 @@ const PublicSideBar = () => {
       <ul className="public-sidebar-list">
         {categories.map((cat) => (
           <li className="public-sidebar-item" key={cat.CategoryID}>
-            <Link to={cat.Path} className="public-sidebar-item-title">
+            <Link to={cat.Slug} className="public-sidebar-item-title">
               {cat.CategoryName}
             </Link>
           </li>

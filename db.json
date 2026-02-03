@@ -18,7 +18,7 @@
     },
     {
       "AccountID": 3,
-      "AccountName": "Reader01",
+      "AccountName": "Phùng Tuấn Hải",
       "AccountEmail": "reader01@funews.edu.vn",
       "AccountPassword": "123456",
       "AccountRole": "READER",
@@ -30,113 +30,262 @@
     {
       "CategoryID": 1,
       "CategoryName": "Tuyển sinh",
-      "CategoryDescription": "Thông tin tuyển sinh các trường đại học",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/tuyen-sinh"
+      "Slug": "tuyen-sinh",
+      "IsActive": 1
     },
     {
       "CategoryID": 2,
       "CategoryName": "Tin tức – Thông báo",
-      "CategoryDescription": "Tin tức và thông báo từ các trường",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/tin-tuc"
+      "Slug": "tin-tuc",
+      "IsActive": 1
     },
     {
       "CategoryID": 3,
       "CategoryName": "Sự kiện",
-      "CategoryDescription": "Sự kiện nổi bật trong giáo dục",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/su-kien"
+      "Slug": "su-kien",
+      "IsActive": 1
     },
     {
       "CategoryID": 4,
       "CategoryName": "Đào tạo – Học thuật",
-      "CategoryDescription": "Hoạt động đào tạo và nghiên cứu",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/dao-tao"
+      "Slug": "dao-tao",
+      "IsActive": 1
     },
     {
       "CategoryID": 5,
       "CategoryName": "Đời sống sinh viên",
-      "CategoryDescription": "Hoạt động và đời sống sinh viên",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/doi-song-sinh-vien"
+      "Slug": "doi-song-sinh-vien",
+      "IsActive": 1
     },
     {
       "CategoryID": 6,
       "CategoryName": "Công nghệ – Đổi mới sáng tạo",
-      "CategoryDescription": "Công nghệ mới và sáng tạo trong giáo dục",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/cong-nghe"
+      "Slug": "cong-nghe",
+      "IsActive": 1
     },
     {
       "CategoryID": 7,
       "CategoryName": "Hướng nghiệp – Việc làm",
-      "CategoryDescription": "Thông tin nghề nghiệp và việc làm",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/viec-lam"
+      "Slug": "viec-lam",
+      "IsActive": 1
     },
     {
       "CategoryID": 8,
       "CategoryName": "Thể thao",
-      "CategoryDescription": "Hoạt động thể thao sinh viên",
-      "ParentCategoryID": null,
-      "IsActive": 1,
-      "Path": "/the-thao"
+      "Slug": "the-thao",
+      "IsActive": 1
     }
   ],
 
   "tags": [
     {
       "TagID": 1,
-      "TagName": "FU News",
-      "Note": "Tin chính thức"
+      "TagName": "FU News"
     },
     {
       "TagID": 2,
-      "TagName": "Sinh viên",
-      "Note": "Tin dành cho sinh viên"
+      "TagName": "Sinh viên"
     },
     {
       "TagID": 3,
-      "TagName": "Công nghệ",
-      "Note": "Tin công nghệ"
+      "TagName": "Công nghệ"
     }
   ],
 
   "newsArticles": [
     {
       "NewsArticleID": 1,
-      "NewsTitle": "Thông báo tuyển sinh năm 2026",
-      "Headline": "Nhiều thay đổi quan trọng trong tuyển sinh",
-      "CreatedDate": "2026-02-01",
-      "NewsContent": "Các trường đại học bắt đầu công bố phương án tuyển sinh...",
-      "NewsSource": "FU News",
+      "Title": "Hành trình trở thành bác sĩ nội trú xuất sắc của thủ khoa Y Hà Nội",
+      "Slug": "hanh-trinh-tro-thanh-bac-si-noi-tru",
+      "Lead": "Học trường huyện, tới giữa lớp 12 mới ôn khối B, Mạnh Hùng không chỉ đỗ Đại học Y Hà Nội, mà sau đó còn trở thành thủ khoa đầu ra, bác sĩ nội trú xuất sắc.",
       "CategoryID": 1,
-      "NewsStatus": 1,
+      "Type": "ARTICLE",
+      "Status": 1,
+      "CreatedDate": "2026-02-01T08:00:00",
       "CreatedByID": 2,
-      "UpdatedByID": 2,
-      "ModifiedDate": "2026-02-01"
+      "ViewCount": 12500
     },
     {
       "NewsArticleID": 2,
-      "NewsTitle": "Ứng dụng AI trong giáo dục đại học",
-      "Headline": "Công nghệ đang thay đổi phương pháp giảng dạy",
-      "CreatedDate": "2026-02-02",
-      "NewsContent": "AI đang được ứng dụng mạnh mẽ trong đào tạo...",
-      "NewsSource": "FU News",
+      "Title": "Tranh cãi sinh viên dùng công cụ cướp slot môn học",
+      "Slug": "tranh-cai-sinh-vien-cuop-slot",
+      "Lead": "Việc sử dụng tool để đăng ký tín chỉ đang gây ra nhiều tranh cãi về tính công bằng trong môi trường đại học.",
       "CategoryID": 6,
-      "NewsStatus": 1,
+      "Type": "ARTICLE",
+      "Status": 1,
+      "CreatedDate": "2026-02-01T09:00:00",
       "CreatedByID": 2,
-      "UpdatedByID": 2,
-      "ModifiedDate": "2026-02-02"
+      "ViewCount": 9800
+    },
+    {
+      "NewsArticleID": 3,
+      "Title": "Thủ khoa giành 5 giải Olympic Toán, Lý toàn quốc",
+      "Slug": "thu-khoa-gianh-5-giai-olympic",
+      "Lead": "Đoàn Minh Lượng từng giành 5 giải Olympic toàn quốc môn Toán và Lý, có bài báo trên tạp chí Q1, trước khi tốt nghiệp thủ khoa Đại học Phenikaa.",
+      "CategoryID": 3,
+      "Type": "ARTICLE",
+      "Status": 1,
+      "CreatedDate": "2026-02-01T10:00:00",
+      "CreatedByID": 2,
+      "ViewCount": 15234
+    },
+    {
+      "NewsArticleID": 4,
+      "Title": "Thêm chương trình đào tạo nhân sự AI chất lượng cao",
+      "Slug": "chuong-trinh-dao-tao-ai",
+      "Lead": "Chương trình \"Học viện AI tại Việt Nam\" do Đại học Bách khoa, NIC và HLE triển khai, cấp chứng chỉ được công nhận tại các tập đoàn công nghệ lớn như Nvidia, Viettel, FPT…",
+      "CategoryID": 6,
+      "Type": "ARTICLE",
+      "Status": 1,
+      "CreatedDate": "2026-02-02T08:30:00",
+      "CreatedByID": 2,
+      "ViewCount": 7500
+    },
+    {
+      "NewsArticleID": 5,
+      "Title": "Trường Quốc tế Singapore có Thủ khoa thế giới kỳ thi Cambridge 2025",
+      "Slug": "truong-quoc-te-singapore-thu-khoa",
+      "Lead": "Học sinh trường Quốc tế Singapore đã xuất sắc giành danh hiệu Thủ khoa thế giới trong kỳ thi Cambridge vừa qua, khẳng định chất lượng đào tạo quốc tế.",
+      "CategoryID": 3,
+      "Type": "ARTICLE",
+      "Status": 1,
+      "CreatedDate": "2026-02-02T11:00:00",
+      "CreatedByID": 2,
+      "ViewCount": 6200
+    },
+    {
+      "NewsArticleID": 6,
+      "Title": "Chàng trai cõng mẹ khi nhận bằng tốt nghiệp xuất sắc",
+      "Slug": "chang-trai-cong-me-tot-nghiep",
+      "Lead": "Hình ảnh chàng tân cử nhân cõng mẹ trên lưng trong ngày nhận bằng tốt nghiệp đã gây xúc động mạnh, lan tỏa thông điệp về lòng hiếu thảo.",
+      "CategoryID": 5,
+      "Type": "ARTICLE",
+      "Status": 1,
+      "CreatedDate": "2026-02-02T14:45:00",
+      "CreatedByID": 2,
+      "ViewCount": 18900
+    },
+    {
+      "NewsArticleID": 7,
+      "Title": "Ăn mày mà đòi xôi gấc trong tiếng Anh nói thế nào?",
+      "Slug": "an-may-doi-xoi-gac-tieng-anh",
+      "Lead": "\"Ăn mày mà đòi xôi gấc\" là cách nói để chỉ những người ở vị thế yếu nhưng lại đưa ra đòi hỏi cao. Bạn có biết cách nói tương tự trong tiếng Anh?",
+      "CategoryID": 4,
+      "Type": "ARTICLE",
+      "Status": 1,
+      "CreatedDate": "2026-02-03T07:15:00",
+      "CreatedByID": 2,
+      "ViewCount": 5400
+    },
+    {
+      "NewsArticleID": 8,
+      "Title": "Nghe bài hát này vào lúc học bài trong vòng 20 ngày thì sẽ đến Tết",
+      "Slug": "podcast-hoc-bai-20-ngay",
+      "Lead": "Âm nhạc giúp tăng khả năng tập trung khi học tập. Cùng thư giãn với bản nhạc Lofi Chill này nhé.",
+      "CategoryID": 5,
+      "Type": "PODCAST",
+      "Status": 1,
+      "CreatedDate": "2026-02-03T09:00:00",
+      "CreatedByID": 2,
+      "ViewCount": 8032
+    }
+  ],
+
+  "articleContents": [
+    {
+      "id": 1,
+      "NewsArticleID": 3,
+      "Order": 1,
+      "Type": "PARAGRAPH",
+      "Content": "Lượng, 23 tuổi, quê Hải Phòng, vừa tốt nghiệp chương trình Vật lý tài năng..."
+    },
+    {
+      "id": 2,
+      "NewsArticleID": 3,
+      "Order": 2,
+      "Type": "QUOTE",
+      "Content": "Mình xác định học Vật lý là phải nghiên cứu nên giảng viên là yếu tố quyết định"
+    },
+    {
+      "id": 3,
+      "NewsArticleID": 3,
+      "Order": 3,
+      "Type": "IMAGE",
+      "MediaID": 3
+    },
+    {
+      "id": 4,
+      "NewsArticleID": 1,
+      "Order": 1,
+      "Type": "PARAGRAPH",
+      "Content": "Mạnh Hùng, chàng trai đến từ vùng quê nghèo, đã viết nên câu chuyện cổ tích..."
+    },
+    {
+      "id": 5,
+      "NewsArticleID": 1,
+      "Order": 2,
+      "Type": "IMAGE",
+      "MediaID": 1
+    }
+  ],
+
+  "media": [
+    {
+      "MediaID": 1,
+      "NewsArticleID": 1,
+      "Type": "IMAGE",
+      "Url": "https://i1-vnexpress.vnecdn.net/2026/01/18/img-2291-jpg-1768731017-176873-9503-8193-1768731762.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=9--QF77v1WnD6AEqDGifSg",
+      "Caption": "Bác sĩ nội trú Mạnh Hùng"
+    },
+    {
+      "MediaID": 2,
+      "NewsArticleID": 2,
+      "Type": "IMAGE",
+      "Url": "https://i1-vnexpress.vnecdn.net/2026/01/28/d2776809-0bc1-43ec-a15c-0915b3-1913-9489-1769566173.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VT4vRagiZDwkb927P9l_3g",
+      "Caption": "Đăng ký tín chỉ"
+    },
+    {
+      "MediaID": 3,
+      "NewsArticleID": 3,
+      "Type": "IMAGE",
+      "Url": "https://i1-vnexpress.vnecdn.net/2026/01/31/4098266225582035685-1769835468-5407-8176-1769863325.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=bVjs1KSnHyippP3Qj5Jtew",
+      "Caption": "Đoàn Minh Lượng"
+    },
+    {
+      "MediaID": 4,
+      "NewsArticleID": 4,
+      "Type": "IMAGE",
+      "Url": "https://i1-vnexpress.vnecdn.net/2026/01/08/image004-1767885332-1767885459-8152-1767885516.png?w=680&h=0&q=100&dpr=1&fit=crop&s=V9lJfAcr5yUi5znGbh5QhQ",
+      "Caption": "Chương trình AI"
+    },
+    {
+      "MediaID": 5,
+      "NewsArticleID": 5,
+      "Type": "IMAGE",
+      "Url": "https://i1-vnexpress.vnecdn.net/2026/01/28/kimdohyeong-1769587281-1769587-9368-3384-1769587339.jpg?w=300&h=180&q=100&dpr=2&fit=crop&s=GykQEGDLu3N64I9iXCnyrQ",
+      "Caption": "Thủ khoa thế giới"
+    },
+    {
+      "MediaID": 6,
+      "NewsArticleID": 6,
+      "Type": "IMAGE",
+      "Url": "https://i1-vnexpress.vnecdn.net/2026/01/26/z7463767962270-a99ad5f203e3485-6596-8810-1769398293.jpg?w=300&h=180&q=100&dpr=2&fit=crop&s=qGUFflnvy5BsU70_tj5Rdg",
+      "Caption": "Cõng mẹ ngày tốt nghiệp"
+    },
+    {
+      "MediaID": 7,
+      "NewsArticleID": 7,
+      "Type": "VIDEO",
+      "Url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "Caption": "Ăn mày đòi xôi gấc"
+    },
+    {
+      "MediaID": 8,
+      "NewsArticleID": 8,
+      "Type": "AUDIO",
+      "Url": "https://res.cloudinary.com/dz9q8zkeh/video/upload/v1769991641/lofi-chill-372954_uxkmzz.mp3",
+      "Duration": "03:20",
+      "Caption": "Lofi Chill"
     }
   ],
 
@@ -144,12 +293,31 @@
     {
       "id": 1,
       "NewsArticleID": 1,
-      "TagID": 1
+      "TagID": 2
     },
     {
       "id": 2,
       "NewsArticleID": 2,
       "TagID": 3
+    }
+  ],
+
+  "comments": [
+    {
+      "CommentID": 1,
+      "NewsArticleID": 1,
+      "AccountID": 3,
+      "Content": "Bài viết rất truyền cảm hứng!",
+      "CreatedDate": "2026-02-02 10:30",
+      "Status": "PENDING"
+    },
+    {
+      "CommentID": 2,
+      "NewsArticleID": 1,
+      "AccountID": 3,
+      "Content": "Bài viết rất hay!",
+      "CreatedDate": "2026-02-02 10:30",
+      "Status": "APPROVED"
     }
   ]
 }

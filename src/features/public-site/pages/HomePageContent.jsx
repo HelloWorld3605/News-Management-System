@@ -7,15 +7,6 @@ const HomePageContent = () => {
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState("0:00");
   const [duration, setDuration] = useState("0:00");
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const openImage = (src) => {
-    setSelectedImage(src);
-  };
-
-  const closeImage = () => {
-    setSelectedImage(null);
-  };
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -76,25 +67,6 @@ const HomePageContent = () => {
                 ra, bác sĩ nội trú xuất sắc.
               </p>
             </div>
-
-            <div className="article-author">
-              <div className="article-author-img">
-                <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
-                  onClick={() =>
-                    openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
-                    )
-                  }
-                />
-              </div>
-              <div className="article-author-info">
-                <dl>
-                  <dt>Phùng Tuấn Hải</dt>
-                  <dd>Tác giả</dd>
-                </dl>
-              </div>
-            </div>
           </article>
           <article className="article">
             {/* <figure className="article-img">
@@ -106,12 +78,6 @@ const HomePageContent = () => {
                 <mark className="mark mark--primary">cướp slot môn học</mark>
               </a>
             </h2>
-            <div className="article-author-info">
-              <p>
-                <strong>By :</strong> Phùng Tuấn Hải, Nguyễn Hữu Tùng, Nguyễn
-                Văn Phú
-              </p>
-            </div>
           </article>
         </div>
         <div className="magazine-column">
@@ -131,28 +97,6 @@ const HomePageContent = () => {
                 Đại học Phenikaa.
               </p>
             </div>
-            <div className="article-author">
-              <div className="article-author-img">
-                <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
-                  onClick={() =>
-                    openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
-                    )
-                  }
-                />
-              </div>
-              <div className="article-author-info">
-                <dl>
-                  <dt>
-                    <Link className="article-link" to="/author-details">
-                      Phùng Tuấn Hải
-                    </Link>
-                  </dt>
-                  <dd>Tác giả</dd>
-                </dl>
-              </div>
-            </div>
           </article>
           <article className="article">
             <figure className="article-img">
@@ -170,24 +114,6 @@ const HomePageContent = () => {
                 đoàn công nghệ lớn như Nvidia, Viettel, FPT…
               </p>
             </div>
-            <div className="article-author">
-              <div className="article-author-img">
-                <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
-                  onClick={() =>
-                    openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
-                    )
-                  }
-                />
-              </div>
-              <div className="article-author-info">
-                <dl>
-                  <dt>Phùng Tuấn Hải</dt>
-                  <dd>Tác giả</dd>
-                </dl>
-              </div>
-            </div>
           </article>
         </div>
 
@@ -203,11 +129,6 @@ const HomePageContent = () => {
                 kỳ thi Cambridge 2025
               </a>
             </h2>
-            <div className="article-creditation">
-              <p>
-                <strong>By :</strong> Phùng Tuấn Hải
-              </p>
-            </div>
           </article>
           <article className="article">
             <figure className="article-img">
@@ -218,9 +139,6 @@ const HomePageContent = () => {
                 Chàng trai cõng mẹ khi nhận bằng tốt nghiệp xuất sắc
               </a>
             </h2>
-            <div className="article-creditation">
-              <strong>By :</strong> Phùng Tuấn Hải
-            </div>
           </article>
         </div>
         <div className="magazine-column">
@@ -250,24 +168,6 @@ const HomePageContent = () => {
                 yếu nhưng lại đưa ra đòi hỏi cao. Bạn có biết cách nói tương tự
                 trong tiếng Anh?.
               </p>
-            </div>
-            <div className="article-author">
-              <div className="article-author-img">
-                <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
-                  onClick={() =>
-                    openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
-                    )
-                  }
-                />
-              </div>
-              <div className="article-author-info">
-                <dl>
-                  <dt>Phùng Tuấn Hải</dt>
-                  <dd>Tác giả</dd>
-                </dl>
-              </div>
             </div>
           </article>
           <article className="article">
@@ -337,7 +237,7 @@ const HomePageContent = () => {
                   </g>
                 </g>
               </svg>
-              <span>Postcast</span>
+              <span> Postcast</span>
             </small>
             <h2 className="article-title article-title--medium">
               <a href="#" className="article-link">
@@ -388,37 +288,9 @@ const HomePageContent = () => {
               <span className="podcast-time">{currentTime}</span>
             </div>
             <div className="article-podcast-info">{/* Postcast info */}</div>
-            <div className="article-author">
-              <div className="article-author-img">
-                <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
-                  onClick={() =>
-                    openImage(
-                      "https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png",
-                    )
-                  }
-                />
-              </div>
-              <div className="article-author-info">
-                <dl>
-                  <dt>Phùng Tuấn Hải</dt>
-                  <dd>Tác giả</dd>
-                </dl>
-              </div>
-            </div>
           </article>
         </div>
       </div>
-      {selectedImage && (
-        <div className="image-modal-overlay" onClick={closeImage}>
-          <img
-            src={selectedImage}
-            alt="Expanded Author"
-            className="image-modal-content"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
     </div>
   );
 };

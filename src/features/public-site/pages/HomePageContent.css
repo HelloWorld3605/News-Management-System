@@ -128,60 +128,6 @@
   }
 }
 
-.article-excerpt,
-.article-creditation {
-  font-size: 1.125rem;
-  line-height: 1.4;
-  p + p {
-    margin-top: 1.5rem;
-  }
-}
-
-.article-author {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.article-author-img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 12px;
-  background-color: #323232;
-  overflow: hidden;
-  background-blend-mode: multiply;
-
-  & + .article-author-info {
-    margin-left: 0.5rem;
-  }
-}
-
-.article-author-info {
-  line-height: 1.375;
-  dl {
-    margin-top: 0.25em;
-  }
-
-  dt {
-    font-weight: 600;
-  }
-
-  dd {
-    font-size: 0.875em;
-  }
-}
-
-.article-category {
-  font-weight: 500;
-  margin-bottom: 1rem;
-  display: block;
-  svg {
-    max-width: 1.5rem;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-  }
-}
-
 .article-podcast-player {
   display: flex;
   align-items: center;
@@ -196,14 +142,15 @@
   border: 0;
   background-color: #000;
   margin-right: 0.5rem;
-  svg {
-    max-width: 1rem;
-    max-height: 1rem;
-    fill: #fff;
-  }
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.podcast-play-button svg {
+  max-width: 1rem;
+  max-height: 1rem;
+  fill: #fff;
 }
 
 .podcast-play-button:hover {
@@ -229,57 +176,4 @@
   font-weight: 500;
   font-size: 1.125rem;
   margin-left: 0.5rem;
-}
-
-:focus {
-  outline: 0;
-}
-
-.image-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.image-modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  cursor: default;
-  animation: zoomIn 0.3s ease-in-out;
-  user-select: none;
-}
-
-.article-author-img img {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  transition: transform 0.2s;
-  user-select: none;
-}
-
-.article-author-img img:hover {
-  transform: scale(1.1);
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }

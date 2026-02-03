@@ -25,11 +25,11 @@ const publicRoutes = [
     element: <PublicLayout />,
     children: [{ index: true, element: <ArticleDetails /> }],
   },
-  {
-    path: "/author-details",
-    element: <PublicLayout />,
-    children: [{ index: true, element: <AuthorDetails /> }],
-  },
+  // {
+  //   path: "/author-details",
+  //   element: <PublicLayout />,
+  //   children: [{ index: true, element: <AuthorDetails /> }],
+  // },
 ];
 
 export default publicRoutes;
