@@ -45,9 +45,12 @@ const CategoriesManagement = () => {
 
   const handleCreateCategory = async (formData) => {
     try {
+      const response = await categoryService.getAll();
+      const allCategories = response.data;
+
       const newCategoryID =
-        categories.length > 0
-          ? Math.max(...categories.map((c) => c.CategoryID || 0)) + 1
+        allCategories.length > 0
+          ? Math.max(...allCategories.map((c) => Number(c.CategoryID) || 0)) + 1
           : 1;
 
       const payload = {

@@ -59,9 +59,12 @@ const UserManagement = () => {
 
   const handleCreateUser = async (formData) => {
     try {
+      const response = await userService.getAll();
+      const allUsers = response.data;
+
       const newAccountID =
-        users.length > 0
-          ? Math.max(...users.map((u) => u.AccountID || 0)) + 1
+        allUsers.length > 0
+          ? Math.max(...allUsers.map((u) => Number(u.AccountID) || 0)) + 1
           : 1;
 
       const userData = {

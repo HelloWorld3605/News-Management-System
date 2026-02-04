@@ -31,12 +31,34 @@
       "isDeleted": false
     },
     {
+      "AccountID": 4,
       "AccountName": "Phùng Hải",
       "AccountEmail": "tuanhai362005t@gmail.com",
       "AccountPassword": "hai362005",
-      "AccountRole": "STAFF",
+      "AccountRole": "READER",
       "IsActive": 1,
-      "id": "4"
+      "id": "4",
+      "isDeleted": false
+    },
+    {
+      "id": "5",
+      "AccountName": "Phú ",
+      "AccountEmail": "phuxp@gmail.com",
+      "AccountPassword": "123",
+      "AccountRole": "ADMIN",
+      "IsActive": 1,
+      "AccountID": 5,
+      "isDeleted": false
+    },
+    {
+      "id": "6",
+      "AccountName": "tùng",
+      "AccountEmail": "tungtinz@gmail.com",
+      "AccountPassword": "123",
+      "AccountRole": "READER",
+      "IsActive": 1,
+      "AccountID": 6,
+      "isDeleted": true
     }
   ],
   "categories": [
@@ -116,15 +138,18 @@
   "tags": [
     {
       "TagID": 1,
-      "TagName": "FU News"
+      "TagName": "FU News",
+      "id": "c992"
     },
     {
       "TagID": 2,
-      "TagName": "Sinh viên"
+      "TagName": "Sinh viên",
+      "id": "269a"
     },
     {
       "TagID": 3,
-      "TagName": "Công nghệ"
+      "TagName": "Công nghệ",
+      "id": "07e1"
     }
   ],
   "newsArticles": [
@@ -138,7 +163,8 @@
       "Status": 1,
       "CreatedDate": "2026-02-01T08:00:00",
       "CreatedByID": 2,
-      "ViewCount": 12500
+      "ViewCount": 12500,
+      "id": "fbd8"
     },
     {
       "NewsArticleID": 2,
@@ -150,7 +176,8 @@
       "Status": 1,
       "CreatedDate": "2026-02-01T09:00:00",
       "CreatedByID": 2,
-      "ViewCount": 9800
+      "ViewCount": 9800,
+      "id": "c23f"
     },
     {
       "NewsArticleID": 3,
@@ -162,7 +189,8 @@
       "Status": 1,
       "CreatedDate": "2026-02-01T10:00:00",
       "CreatedByID": 2,
-      "ViewCount": 15234
+      "ViewCount": 15234,
+      "id": "433f"
     },
     {
       "NewsArticleID": 4,
@@ -174,7 +202,8 @@
       "Status": 1,
       "CreatedDate": "2026-02-02T08:30:00",
       "CreatedByID": 2,
-      "ViewCount": 7500
+      "ViewCount": 7500,
+      "id": "7170"
     },
     {
       "NewsArticleID": 5,
@@ -186,7 +215,8 @@
       "Status": 1,
       "CreatedDate": "2026-02-02T11:00:00",
       "CreatedByID": 2,
-      "ViewCount": 6200
+      "ViewCount": 6200,
+      "id": "27fa"
     },
     {
       "NewsArticleID": 6,
@@ -198,7 +228,8 @@
       "Status": 1,
       "CreatedDate": "2026-02-02T14:45:00",
       "CreatedByID": 2,
-      "ViewCount": 18900
+      "ViewCount": 18900,
+      "id": "cb86"
     },
     {
       "NewsArticleID": 7,
@@ -210,7 +241,8 @@
       "Status": 1,
       "CreatedDate": "2026-02-03T07:15:00",
       "CreatedByID": 2,
-      "ViewCount": 5400
+      "ViewCount": 5400,
+      "id": "5cd3"
     },
     {
       "NewsArticleID": 8,
@@ -222,40 +254,41 @@
       "Status": 1,
       "CreatedDate": "2026-02-03T09:00:00",
       "CreatedByID": 2,
-      "ViewCount": 8032
+      "ViewCount": 8032,
+      "id": "43f6"
     }
   ],
   "articleContents": [
     {
-      "id": 1,
+      "id": "1",
       "NewsArticleID": 3,
       "Order": 1,
       "Type": "PARAGRAPH",
       "Content": "Lượng, 23 tuổi, quê Hải Phòng, vừa tốt nghiệp chương trình Vật lý tài năng..."
     },
     {
-      "id": 2,
+      "id": "2",
       "NewsArticleID": 3,
       "Order": 2,
       "Type": "QUOTE",
       "Content": "Mình xác định học Vật lý là phải nghiên cứu nên giảng viên là yếu tố quyết định"
     },
     {
-      "id": 3,
+      "id": "3",
       "NewsArticleID": 3,
       "Order": 3,
       "Type": "IMAGE",
       "MediaID": 3
     },
     {
-      "id": 4,
+      "id": "4",
       "NewsArticleID": 1,
       "Order": 1,
       "Type": "PARAGRAPH",
       "Content": "Mạnh Hùng, chàng trai đến từ vùng quê nghèo, đã viết nên câu chuyện cổ tích..."
     },
     {
-      "id": 5,
+      "id": "5",
       "NewsArticleID": 1,
       "Order": 2,
       "Type": "IMAGE",
@@ -268,49 +301,56 @@
       "NewsArticleID": 1,
       "Type": "IMAGE",
       "Url": "https://i1-vnexpress.vnecdn.net/2026/01/18/img-2291-jpg-1768731017-176873-9503-8193-1768731762.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=9--QF77v1WnD6AEqDGifSg",
-      "Caption": "Bác sĩ nội trú Mạnh Hùng"
+      "Caption": "Bác sĩ nội trú Mạnh Hùng",
+      "id": "e169"
     },
     {
       "MediaID": 2,
       "NewsArticleID": 2,
       "Type": "IMAGE",
       "Url": "https://i1-vnexpress.vnecdn.net/2026/01/28/d2776809-0bc1-43ec-a15c-0915b3-1913-9489-1769566173.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VT4vRagiZDwkb927P9l_3g",
-      "Caption": "Đăng ký tín chỉ"
+      "Caption": "Đăng ký tín chỉ",
+      "id": "0071"
     },
     {
       "MediaID": 3,
       "NewsArticleID": 3,
       "Type": "IMAGE",
       "Url": "https://i1-vnexpress.vnecdn.net/2026/01/31/4098266225582035685-1769835468-5407-8176-1769863325.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=bVjs1KSnHyippP3Qj5Jtew",
-      "Caption": "Đoàn Minh Lượng"
+      "Caption": "Đoàn Minh Lượng",
+      "id": "68fa"
     },
     {
       "MediaID": 4,
       "NewsArticleID": 4,
       "Type": "IMAGE",
       "Url": "https://i1-vnexpress.vnecdn.net/2026/01/08/image004-1767885332-1767885459-8152-1767885516.png?w=680&h=0&q=100&dpr=1&fit=crop&s=V9lJfAcr5yUi5znGbh5QhQ",
-      "Caption": "Chương trình AI"
+      "Caption": "Chương trình AI",
+      "id": "8952"
     },
     {
       "MediaID": 5,
       "NewsArticleID": 5,
       "Type": "IMAGE",
       "Url": "https://i1-vnexpress.vnecdn.net/2026/01/28/kimdohyeong-1769587281-1769587-9368-3384-1769587339.jpg?w=300&h=180&q=100&dpr=2&fit=crop&s=GykQEGDLu3N64I9iXCnyrQ",
-      "Caption": "Thủ khoa thế giới"
+      "Caption": "Thủ khoa thế giới",
+      "id": "e6f4"
     },
     {
       "MediaID": 6,
       "NewsArticleID": 6,
       "Type": "IMAGE",
       "Url": "https://i1-vnexpress.vnecdn.net/2026/01/26/z7463767962270-a99ad5f203e3485-6596-8810-1769398293.jpg?w=300&h=180&q=100&dpr=2&fit=crop&s=qGUFflnvy5BsU70_tj5Rdg",
-      "Caption": "Cõng mẹ ngày tốt nghiệp"
+      "Caption": "Cõng mẹ ngày tốt nghiệp",
+      "id": "1157"
     },
     {
       "MediaID": 7,
       "NewsArticleID": 7,
       "Type": "VIDEO",
       "Url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "Caption": "Ăn mày đòi xôi gấc"
+      "Caption": "Ăn mày đòi xôi gấc",
+      "id": "1d35"
     },
     {
       "MediaID": 8,
@@ -318,17 +358,18 @@
       "Type": "AUDIO",
       "Url": "https://res.cloudinary.com/dz9q8zkeh/video/upload/v1769991641/lofi-chill-372954_uxkmzz.mp3",
       "Duration": "03:20",
-      "Caption": "Lofi Chill"
+      "Caption": "Lofi Chill",
+      "id": "406c"
     }
   ],
   "newsTags": [
     {
-      "id": 1,
+      "id": "1",
       "NewsArticleID": 1,
       "TagID": 2
     },
     {
-      "id": 2,
+      "id": "2",
       "NewsArticleID": 2,
       "TagID": 3
     }
@@ -340,7 +381,8 @@
       "AccountID": 3,
       "Content": "Bài viết rất truyền cảm hứng!",
       "CreatedDate": "2026-02-02 10:30",
-      "Status": "PENDING"
+      "Status": "PENDING",
+      "id": "33ff"
     },
     {
       "CommentID": 2,
@@ -348,7 +390,8 @@
       "AccountID": 3,
       "Content": "Bài viết rất hay!",
       "CreatedDate": "2026-02-02 10:30",
-      "Status": "APPROVED"
+      "Status": "APPROVED",
+      "id": "849b"
     }
   ]
 }
