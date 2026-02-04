@@ -46,7 +46,7 @@ const UserManagement = () => {
     try {
       const response = await userService.getAll();
       const allUsers = response.data;
-  
+
       setUsers(allUsers.filter((u) => u.isDeleted !== true));
     } catch (error) {
       console.error("Failed to fetch users", error);
@@ -68,7 +68,7 @@ const UserManagement = () => {
         ...formData,
         AccountID: newAccountID,
         isDeleted: false,
-        id: newAccountID.toString(), 
+        id: newAccountID.toString(),
       };
 
       await userService.create(userData);
@@ -289,7 +289,7 @@ const UserManagement = () => {
                 </thead>
                 <tbody>
                   {currentUsers.map((user) => (
-                    <tr key={user.AccountID}>
+                    <tr key={user.id}>
                       <td>
                         <div className="um-user-cell">
                           <div className="um-avatar-fallback">

@@ -20,7 +20,7 @@ const PublicSideBar = () => {
       </div>
       <ul className="public-sidebar-list">
         {categories.map((cat) => (
-          <li className="public-sidebar-item" key={cat.CategoryID}>
+          <li className="public-sidebar-item" key={cat.id}>
             <Link to={cat.Slug} className="public-sidebar-item-title">
               {cat.CategoryName}
             </Link>

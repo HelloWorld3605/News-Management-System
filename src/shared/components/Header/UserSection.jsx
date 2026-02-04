@@ -64,6 +64,13 @@ const UserSection = () => {
           </div>
         );
       case "viewed":
+        if (!isAuthenticated) {
+          return (
+            <div className="notification-empty">
+              <p>Chưa có tin nào đã xem.</p>
+            </div>
+          );
+        }
         return (
           <ul className="notification-list">
             <li className="notification-item">
@@ -82,11 +89,11 @@ const UserSection = () => {
   };
 
   // ======================
-  // CHƯA ĐĂNG NHẬP
+  // RENDER
   // ======================
-  if (!isAuthenticated) {
-    return (
-      <div className="user-section">
+  return (
+    <div className="user-section">
+      {!isAuthenticated ? (
         <nav className="header-nav">
           <Link to="/login" className="header-link">
             Đăng nhập
@@ -95,67 +102,50 @@ const UserSection = () => {
             Đăng ký
           </Link>
         </nav>
+      ) : (
+        <div className="user-section-group" ref={dropdownRef}>
+          <div
+            className={`header-user-info ${showDropdown ? "active" : ""}`}
+            onClick={toggleDropdown}
+          >
+            <span className="user-name">{user.AccountName}</span>
+            <span className="user-role">({user.AccountRole})</span>
+          </div>
 
-        <button
-          className="header-notification-button"
-          aria-label="Notifications"
-        >
-          <ion-icon name="notifications-outline"></ion-icon>
-        </button>
-
-        <button className="header-menu-button">Xem Thêm</button>
-      </div>
-    );
-  }
-
-  // ======================
-  // ĐÃ ĐĂNG NHẬP
-  // ======================
-  return (
-    <div className="user-section">
-      {/* User Info Group */}
-      <div className="user-section-group" ref={dropdownRef}>
-        <div
-          className={`header-user-info ${showDropdown ? "active" : ""}`}
-          onClick={toggleDropdown}
-        >
-          <span className="user-name">{user.AccountName}</span>
-          <span className="user-role">({user.AccountRole})</span>
-        </div>
-
-        {showDropdown && (
-          <div className="user-dropdown-menu">
-            {isAdmin && (
+          {showDropdown && (
+            <div className="user-dropdown-menu">
+              {isAdmin && (
+                <Link
+                  to="/admin/dashboard"
+                  className="dropdown-item"
+                  onClick={() => setShowDropdown(false)}
+                >
+                  Trang quản trị
+                </Link>
+              )}
               <Link
-                to="/admin/dashboard"
+                to="/settings"
                 className="dropdown-item"
                 onClick={() => setShowDropdown(false)}
               >
-                Trang quản trị
+                Cài đặt
               </Link>
-            )}
-            <Link
-              to="/settings"
-              className="dropdown-item"
-              onClick={() => setShowDropdown(false)}
-            >
-              Cài đặt
-            </Link>
-            <div className="dropdown-divider"></div>
-            <button
-              onClick={() => {
-                logout();
-                setShowDropdown(false);
-              }}
-              className="dropdown-item dropdown-logout-btn"
-            >
-              Đăng xuất
-            </button>
-          </div>
-        )}
-      </div>
+              <div className="dropdown-divider"></div>
+              <button
+                onClick={() => {
+                  logout();
+                  setShowDropdown(false);
+                }}
+                className="dropdown-item dropdown-logout-btn"
+              >
+                Đăng xuất
+              </button>
+            </div>
+          )}
+        </div>
+      )}
 
-      {/* Notification Group */}
+      {/* Notification Group - Always visible */}
       <div className="user-section-group" ref={notifDropdownRef}>
         <button
           className="header-notification-button"
