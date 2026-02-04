@@ -19,8 +19,7 @@ body {
 
 /* Global Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
