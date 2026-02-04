@@ -9,7 +9,6 @@ import Pagination from "../../../../shared/components/Pagination/Pagination";
 import "./CategoriesManagement.css";
 
 const StatusBadge = ({ isActive }) => {
-  // Assuming IsActive is 1 for active and 0 for inactive
   const badgeClass =
     isActive === 1
       ? "cm-badge cm-status-active"

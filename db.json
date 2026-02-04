@@ -128,8 +128,8 @@
     },
     {
       "id": "9",
-      "CategoryName": "ý tưởng start up",
-      "Slug": "y-tuong-start-up",
+      "CategoryName": "Start up",
+      "Slug": "start-up",
       "IsActive": 1,
       "CategoryID": 9,
       "isDeleted": false
