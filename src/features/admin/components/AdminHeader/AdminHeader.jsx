@@ -79,7 +79,6 @@ const AdminHeader = () => {
           </div>
         ) : (
           <div className="admin-user-placeholder">
-            
             <button className="admin-user-avatar">A</button>
           </div>
         )}

@@ -164,12 +164,20 @@ const UserIcon = () => {
 };
 
 const navigationItems = [
-  { name: "Trang Tổng Quan", path: "/admin/dashboard", icon: LayoutDashboardIcon },
+  {
+    name: "Trang Tổng Quan",
+    path: "/admin/dashboard",
+    icon: LayoutDashboardIcon,
+  },
   { name: "Người Dùng", path: "/admin/users", icon: UserIcon },
   { name: "Danh mục", path: "/admin/categories", icon: FolderIcon },
   { name: "Bài Viết", path: "/admin/news-articles", icon: FileTextIcon },
   { name: "Tags", path: "/admin/tags", icon: TagIcon },
-  { name: "Nội Dung Bài Viết", path: "/admin/article-contents", icon: FileIcon },
+  {
+    name: "Nội Dung Bài Viết",
+    path: "/admin/article-contents",
+    icon: FileIcon,
+  },
   { name: "News Tags", path: "/admin/news-tags", icon: TagsIcon },
   { name: "Bình Luận", path: "/admin/comments", icon: MessageSquareIcon },
 ];

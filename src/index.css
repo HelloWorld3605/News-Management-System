@@ -17,10 +17,20 @@ body {
   box-sizing: border-box;
 }
 
-/* .page-title h1 {
-  font-family: "Fraunces", serif;
+/* Global Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.search-container input {
-  font-family: "Fraunces", serif;
-} */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(139, 111, 71);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #755c3c;
+}
