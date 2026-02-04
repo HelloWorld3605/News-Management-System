@@ -81,7 +81,7 @@
 
 .admin-user-info:hover,
 .admin-user-info.active {
-  border-bottom: 2px solid rgb(139, 111, 71);
+  border-bottom: 2px solid #000;
   background-color: transparent;
 }
 
