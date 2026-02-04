@@ -138,21 +138,6 @@ const ArticleDetails = () => {
               nghiên cứu, đồng thời cải thiện khả năng ngoại ngữ để tìm kiếm học
               bổng du học.
             </p>
-
-            <div className="article-author">
-              <div className="article-author-img">
-                <img
-                  src="https://res.cloudinary.com/dz9q8zkeh/image/upload/v1769995081/avatar_t%C3%A1c_gi%E1%BA%A3_ylciab.png"
-                  alt="Phùng Tuấn Hải"
-                />
-              </div>
-              <div className="article-author-info">
-                <dl>
-                  <dt>Phùng Tuấn Hải</dt>
-                  <dd>Tác giả</dd>
-                </dl>
-              </div>
-            </div>
           </main>
 
           <aside className="article-sidebar">
